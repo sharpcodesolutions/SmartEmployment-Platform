@@ -11,9 +11,9 @@ namespace SmartEmployment.Repository.Abstract
 {
 	public class EntityBaseRepository<T> : IEntityBaseRepository<T> where T : class, IEntityBase, new()
 	{
-		private SharpEmploymentContext _context;
+		private SmartEmploymentContext _context;
 
-		public EntityBaseRepository(SharpEmploymentContext context)
+		public EntityBaseRepository(SmartEmploymentContext context)
 		{
 			_context = context;
 		}

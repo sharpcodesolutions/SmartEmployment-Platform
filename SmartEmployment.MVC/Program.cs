@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using SmartEmployment.DataAccess.Model;
 using SmartEmployment.Repository.Abstract;
 using SmartEmployment.Repository.Concrete;
@@ -6,7 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<EntityBaseRepository<Role>, RoleRepository>(); 
+builder.Services.AddDbContext<SmartEmploymentContext>();
+builder.Services.AddScoped<IEntityBaseRepository<Role>, RoleRepository>(); 
 
 var app = builder.Build();
 

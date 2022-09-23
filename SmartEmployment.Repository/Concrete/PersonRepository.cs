@@ -10,6 +10,6 @@ namespace SmartEmployment.Repository.Concrete
 {
 	public class PersonRepository : EntityBaseRepository<Person>
 	{
-		public PersonRepository(SharpEmploymentContext context) : base(context) { }
+		public PersonRepository(SmartEmploymentContext context) : base(context) { }
 	}
 }

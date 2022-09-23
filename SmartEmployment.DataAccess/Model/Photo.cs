@@ -12,6 +12,8 @@ namespace SmartEmployment.DataAccess.Model
 		public byte[] PhotoFile { get; set; }
 		public string ImageMimeType { get; set; }
 		public bool IsDefault { get; set; }
+		public byte[] Version { get; set; }
+		public bool? Deleted { get; set; }
 		public virtual Employee Employee { get; set; }	
 	}
 }

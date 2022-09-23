@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.Console\\SmartEmployment.Console.csproj": {}
+    "C:\\GitHub\\SmartEmployment\\SmartEmployment.Console\\SmartEmployment.Console.csproj": {}
   },
   "projects": {
-    "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.Console\\SmartEmployment.Console.csproj": {
+    "C:\\GitHub\\SmartEmployment\\SmartEmployment.Console\\SmartEmployment.Console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.Console\\SmartEmployment.Console.csproj",
+        "projectUniqueName": "C:\\GitHub\\SmartEmployment\\SmartEmployment.Console\\SmartEmployment.Console.csproj",
         "projectName": "SmartEmployment.Console",
-        "projectPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.Console\\SmartEmployment.Console.csproj",
+        "projectPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.Console\\SmartEmployment.Console.csproj",
         "packagesPath": "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\",
-        "outputPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.Console\\obj\\",
+        "outputPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.Console\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\WilliamAlkawaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.Repository\\SmartEmployment.Repository.csproj": {
-                "projectPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.Repository\\SmartEmployment.Repository.csproj"
+              "C:\\GitHub\\SmartEmployment\\SmartEmployment.Repository\\SmartEmployment.Repository.csproj": {
+                "projectPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.Repository\\SmartEmployment.Repository.csproj"
               }
             }
           }
@@ -63,14 +63,14 @@
         }
       }
     },
-    "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.DataAccess\\SmartEmployment.DataAccess.csproj": {
+    "C:\\GitHub\\SmartEmployment\\SmartEmployment.DataAccess\\SmartEmployment.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.DataAccess\\SmartEmployment.DataAccess.csproj",
+        "projectUniqueName": "C:\\GitHub\\SmartEmployment\\SmartEmployment.DataAccess\\SmartEmployment.DataAccess.csproj",
         "projectName": "SmartEmployment.DataAccess",
-        "projectPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.DataAccess\\SmartEmployment.DataAccess.csproj",
+        "projectPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.DataAccess\\SmartEmployment.DataAccess.csproj",
         "packagesPath": "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\",
-        "outputPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.DataAccess\\obj\\",
+        "outputPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\WilliamAlkawaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -132,14 +132,14 @@
         }
       }
     },
-    "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.Repository\\SmartEmployment.Repository.csproj": {
+    "C:\\GitHub\\SmartEmployment\\SmartEmployment.Repository\\SmartEmployment.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.Repository\\SmartEmployment.Repository.csproj",
+        "projectUniqueName": "C:\\GitHub\\SmartEmployment\\SmartEmployment.Repository\\SmartEmployment.Repository.csproj",
         "projectName": "SmartEmployment.Repository",
-        "projectPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.Repository\\SmartEmployment.Repository.csproj",
+        "projectPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.Repository\\SmartEmployment.Repository.csproj",
         "packagesPath": "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\",
-        "outputPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.Repository\\obj\\",
+        "outputPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\WilliamAlkawaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -156,8 +156,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.DataAccess\\SmartEmployment.DataAccess.csproj": {
-                "projectPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment\\SmartEmployment.DataAccess\\SmartEmployment.DataAccess.csproj"
+              "C:\\GitHub\\SmartEmployment\\SmartEmployment.DataAccess\\SmartEmployment.DataAccess.csproj": {
+                "projectPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.DataAccess\\SmartEmployment.DataAccess.csproj"
               }
             }
           }

@@ -12,7 +12,7 @@ var optionsBuilder = new DbContextOptionsBuilder<SharpEmploymentContext>();
 optionsBuilder.UseSqlServer(connectionstring);
 */
 
-SharpEmploymentContext dbContext = new SharpEmploymentContext();
+SmartEmploymentContext dbContext = new SmartEmploymentContext();
 
 var company = new Company();
 var companyRepository = new CompanyRepository(dbContext);
@@ -21,7 +21,12 @@ var person = new Person();
 var personRepository = new PersonRepository(dbContext);
 
 
-Console.WriteLine("Process completed!"); 
+Console.WriteLine("Process completed!");
+
+var role = new Role(); 
+var roleRepository = new RoleRepository(dbContext);
+var allRoles = roleRepository.GetAll();
+Console.WriteLine(allRoles.Count());
 
 /*
 Console.Write("Enter first name:  ");
