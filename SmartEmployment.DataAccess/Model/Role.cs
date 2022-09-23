@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace SmartEmployment.DataAccess.Model
 {
-	public class Role : IEntityBase
+	public class Role : IdentityRole
 	{
 		public Role()
 		{
 			UserRoles = new HashSet<UserRole>();
 		}
-		public int Id { get; set; }
+		// public int Id { get; set; }
 		public string Name { get; set; }
 		public byte[] Version { get; set; }
 		public bool Deleted { get; set; }

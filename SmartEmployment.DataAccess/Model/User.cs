@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace SmartEmployment.DataAccess.Model
 {
+	[NotMapped]
 	public class User : IdentityUser
 	{
 		public User()
@@ -15,7 +17,7 @@ namespace SmartEmployment.DataAccess.Model
 			UserRoles = new HashSet<UserRole>();
 		}
 
-		public int UserId { get; set; }
+		// public int UserId { get; set; }
 		public DateTime StartDate { get; set; }
 		public DateTime? FinishedDate { get; set; }
 		public byte[] Version { get; set; }

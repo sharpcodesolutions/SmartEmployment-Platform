@@ -24,9 +24,9 @@ var personRepository = new PersonRepository(dbContext);
 Console.WriteLine("Process completed!");
 
 var role = new Role(); 
-var roleRepository = new RoleRepository(dbContext);
-var allRoles = roleRepository.GetAll();
-Console.WriteLine(allRoles.Count());
+// var roleRepository = new RoleRepository(dbContext);
+// var allRoles = roleRepository.GetAll();
+// Console.WriteLine(allRoles.Count());
 
 /*
 Console.Write("Enter first name:  ");

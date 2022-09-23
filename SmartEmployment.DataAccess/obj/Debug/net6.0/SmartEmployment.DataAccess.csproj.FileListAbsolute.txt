@@ -22,3 +22,5 @@ C:\GitHub\SmartEmployment\SmartEmployment.DataAccess\obj\Debug\net6.0\SmartEmplo
 C:\GitHub\SmartEmployment\SmartEmployment.DataAccess\obj\Debug\net6.0\refint\SmartEmployment.DataAccess.dll
 C:\GitHub\SmartEmployment\SmartEmployment.DataAccess\obj\Debug\net6.0\SmartEmployment.DataAccess.pdb
 C:\GitHub\SmartEmployment\SmartEmployment.DataAccess\obj\Debug\net6.0\ref\SmartEmployment.DataAccess.dll
+C:\GitHub\SmartEmployment\SmartEmployment.DataAccess\bin\Debug\net6.0\SmartEmployment.DataAccess.runtimeconfig.json
+C:\GitHub\SmartEmployment\SmartEmployment.DataAccess\obj\Debug\net6.0\SmartEmployment.DataAccess.genruntimeconfig.cache
