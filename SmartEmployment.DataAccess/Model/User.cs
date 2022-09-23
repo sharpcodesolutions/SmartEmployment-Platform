@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace SmartEmployment.DataAccess.Model
 {
 	[NotMapped]
-	public class User : IdentityUser
+	public class User : IdentityUser<int>, IEntityBase
 	{
 		public User()
 		{
@@ -24,8 +24,8 @@ namespace SmartEmployment.DataAccess.Model
 		public int? PersonId { get; set; }
 		public bool Deleted { get; set; }
 		public int? CompanyId { get; set; }
-		public string PasswordQuestion { get; set; }
-		public string PasswordAnswer { get; set; }
+		public string? PasswordQuestion { get; set; }
+		public string? PasswordAnswer { get; set; }
 		public int ReceivesFiles { get; set; }
 		public DateTime PasswordModificationDate { get; set; }
 		public int? EmployeeId { get; set; }
@@ -34,18 +34,18 @@ namespace SmartEmployment.DataAccess.Model
 		public bool IsLockedOut { get; set; }
 		public DateTime? LastLockoutDate { get; set; }
 		public int FailedPasswordAttemptCount { get; set; }
-		public string Token { get; set; }
-		public byte TwoFactorAuthSetupStatus { get; set; }
+		public string? Token { get; set; }
+		public int TwoFactorAuthSetupStatus { get; set; }
 		public bool IsMfaLockedOut { get; set; }
-		public byte FailedMfaAttemptCount { get; set; }
-		public string LastDeviceCodeUsed { get; set; }
-		public string CurrentMfaDeviceToken { get; set; }
-		public byte FailedAccountVerificationAttempts { get; set; }
-		public byte PasswordResetAttemptCount { get; set; }
+		public int FailedMfaAttemptCount { get; set; }
+		public string? LastDeviceCodeUsed { get; set; }
+		public string? CurrentMfaDeviceToken { get; set; }
+		public int FailedAccountVerificationAttempts { get; set; }
+		public int PasswordResetAttemptCount { get; set; }
 
-		public virtual Employee Employee { get; set; }
-		public virtual Person Person { get; set; }
-		public virtual Company Company { get; set; }
+		public virtual Employee? Employee { get; set; }
+		public virtual Person? Person { get; set; }
+		public virtual Company? Company { get; set; }
 		public virtual ICollection<UserRole> UserRoles { get; set; }
 	}
 }

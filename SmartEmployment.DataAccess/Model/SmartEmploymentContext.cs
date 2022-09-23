@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SmartEmployment.DataAccess.Model
 {
-	public partial class SmartEmploymentContext : IdentityDbContext<User>
+	public partial class SmartEmploymentContext : IdentityDbContext<User, Role, int>
 	{
 		public SmartEmploymentContext(DbContextOptions<SmartEmploymentContext> dbContextOptions)
 	   : base(dbContextOptions)
@@ -21,7 +21,7 @@ namespace SmartEmployment.DataAccess.Model
 
 		public SmartEmploymentContext()
 		{
-			// this.Database.EnsureDeleted(); 
+			this.Database.EnsureDeleted(); 
 			this.Database.EnsureCreated();
 		}
 
@@ -155,7 +155,7 @@ namespace SmartEmployment.DataAccess.Model
 
 			modelBuilder.Entity<User>(entity =>
 			{
-				entity.Property(e => e.Id).ValueGeneratedNever();
+				// entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
 				entity.Property(e => e.CurrentMfaDeviceToken).HasMaxLength(255);
 

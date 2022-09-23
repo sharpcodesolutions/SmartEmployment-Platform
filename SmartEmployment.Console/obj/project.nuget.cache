@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Qh/Vg+wla3iBP6fn8Zlc7M+RJzwTBksL9nIvJEN/kp42jkO/1kiK0oQSK4lOg1Dgmrx+Fl9p8fay4JwiRNuzNQ==",
+  "dgSpecHash": "jX8WmZjOeNwkn49vDFNpVghJNjc6XmS2Vy1wPX5hzpN1DqKXaY3jNpWp1cXbC22FHi6RvjiMLqO5hsPe/aTAiw==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.Console\\SmartEmployment.Console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.9\\microsoft.aspnetcore.cryptography.internal.6.0.9.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.9\\microsoft.aspnetcore.cryptography.keyderivation.6.0.9.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.9\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.9.nupkg.sha512",
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.9\\microsoft.aspnetcore.identity.ui.6.0.9.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
@@ -20,6 +21,8 @@
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\6.0.0\\microsoft.extensions.fileproviders.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.extensions.fileproviders.embedded\\6.0.9\\microsoft.extensions.fileproviders.embedded.6.0.9.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.extensions.identity.core\\6.0.9\\microsoft.extensions.identity.core.6.0.9.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.extensions.identity.stores\\6.0.9\\microsoft.extensions.identity.stores.6.0.9.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",

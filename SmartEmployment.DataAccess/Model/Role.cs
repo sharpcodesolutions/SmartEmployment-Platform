@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SmartEmployment.DataAccess.Model
 {
-	public class Role : IdentityRole
+	public class Role : IdentityRole<int>, IEntityBase
 	{
 		public Role()
 		{

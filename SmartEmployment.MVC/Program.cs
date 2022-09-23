@@ -1,14 +1,17 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using SmartEmployment.DataAccess.Model;
 using SmartEmployment.Repository.Abstract;
 using SmartEmployment.Repository.Concrete;
+using Microsoft.AspNetCore.Identity.UI;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<SmartEmploymentContext>();
+
 builder.Services.AddIdentity<User, Role>(
 	options =>
 	{
@@ -20,7 +23,8 @@ builder.Services.AddIdentity<User, Role>(
 		options.Password.RequiredLength = 6;
 		options.Password.RequiredUniqueChars = 1;
 	}).AddEntityFrameworkStores<SmartEmploymentContext>()
-		.AddDefaultTokenProviders(); 
+		.AddDefaultTokenProviders();
+
 // builder.Services.AddScoped<IEntityBaseRepository<Role>, RoleRepository>();
 
 builder.Services.ConfigureApplicationCookie(options =>
