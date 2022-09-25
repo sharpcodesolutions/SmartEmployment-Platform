@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SmartEmployment.Repository\SmartEmployment.Repository.csproj" />
+    <ProjectReference Include="..\SmartEmployment.Services\SmartEmployment.Services.csproj" />
   </ItemGroup>
 
 </Project>

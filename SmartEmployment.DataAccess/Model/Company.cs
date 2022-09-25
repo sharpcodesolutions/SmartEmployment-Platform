@@ -25,7 +25,7 @@ namespace SmartEmployment.DataAccess.Model
 		public DateTime StartDate { get; set; }
 		public DateTime? FinishedDate { get; set; }
 		public bool Deleted { get; set; }
-		public string CommpanyCode { get; set; }
+		public string CompanyCode { get; set; }
 		public int? CompanyHead { get; set; }
 
 		public virtual ICollection<Employee> Employees { get; set; }

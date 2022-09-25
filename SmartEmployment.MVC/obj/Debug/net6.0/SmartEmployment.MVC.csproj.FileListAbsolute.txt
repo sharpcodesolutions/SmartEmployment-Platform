@@ -273,3 +273,5 @@ C:\GitHub\SmartEmployment\SmartEmployment.MVC\bin\Debug\net6.0\Microsoft.EntityF
 C:\GitHub\SmartEmployment\SmartEmployment.MVC\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\GitHub\SmartEmployment\SmartEmployment.MVC\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\GitHub\SmartEmployment\SmartEmployment.MVC\obj\Debug\net6.0\SmartEmployment.MVC.MvcApplicationPartsAssemblyInfo.cs
+C:\GitHub\SmartEmployment\SmartEmployment.MVC\bin\Debug\net6.0\SmartEmployment.Services.dll
+C:\GitHub\SmartEmployment\SmartEmployment.MVC\bin\Debug\net6.0\SmartEmployment.Services.pdb

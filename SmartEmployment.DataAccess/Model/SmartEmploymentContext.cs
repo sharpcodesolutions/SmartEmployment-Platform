@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace SmartEmployment.DataAccess.Model
 {
-	public partial class SmartEmploymentContext : IdentityDbContext<User, Role, int>
+	public partial class SmartEmploymentContext : IdentityDbContext<User, Role, int, IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>,
+	 IdentityRoleClaim<int>, IdentityUserToken<int>>
 	{
 		public SmartEmploymentContext(DbContextOptions<SmartEmploymentContext> dbContextOptions)
 	   : base(dbContextOptions)
@@ -21,7 +22,7 @@ namespace SmartEmployment.DataAccess.Model
 
 		public SmartEmploymentContext()
 		{
-			this.Database.EnsureDeleted(); 
+			// this.Database.EnsureDeleted(); 
 			this.Database.EnsureCreated();
 		}
 
@@ -112,10 +113,12 @@ namespace SmartEmployment.DataAccess.Model
 			{
 				entity.ToTable("Role");
 
+				/*
 				entity.Property(e => e.Name)
 					.HasMaxLength(255)
 					.IsRequired()
 					.IsFixedLength(true);
+				*/
 
 				entity.Property(e => e.Version)
 					.IsRequired()
@@ -133,7 +136,7 @@ namespace SmartEmployment.DataAccess.Model
 					.IsRequired()
 					.HasMaxLength(255);
 
-				entity.Property(e => e.CommpanyCode)
+				entity.Property(e => e.CompanyCode)
 					.IsRequired()
 					.HasMaxLength(255);
 
@@ -148,14 +151,21 @@ namespace SmartEmployment.DataAccess.Model
 			modelBuilder.Entity<CompanyAddress>(entity =>
 			{
 				entity.ToTable("CompanyAddress");
+
 				entity.HasOne(d => d.Company)
 					.WithMany(p => p.CompanyAddresses)
 					.HasConstraintName("FK_CompanyAddress_Company");
+
+				entity.Property(e => e.Version)
+					.IsRequired()
+					.IsRowVersion()
+					.IsConcurrencyToken();
 			});
 
 			modelBuilder.Entity<User>(entity =>
 			{
 				// entity.Property(e => e.Id).ValueGeneratedOnAdd();
+				entity.ToTable("User");
 
 				entity.Property(e => e.CurrentMfaDeviceToken).HasMaxLength(255);
 
@@ -179,9 +189,11 @@ namespace SmartEmployment.DataAccess.Model
 
 				entity.Property(e => e.Token).HasMaxLength(255);
 
+				/*
 				entity.Property(e => e.UserName)
 					.IsRequired()
 					.HasMaxLength(255);
+				*/
 
 				entity.Property(e => e.Version)
 					.IsRequired()
@@ -209,12 +221,14 @@ namespace SmartEmployment.DataAccess.Model
 			{
 				entity.ToTable("UserRole");
 
-				entity.Property(e => e.Id).ValueGeneratedNever();
+				// entity.Property(e => e.Id).ValueGeneratedNever();
+				// entity.HasKey(e => e.Id); 
 
 				entity.Property(e => e.Version)
 					.IsRowVersion()
 					.IsConcurrencyToken();
 
+				/*
 				entity.HasOne(d => d.Role)
 					.WithMany(p => p.UserRoles)
 					.HasForeignKey(d => d.RoleId)
@@ -224,6 +238,7 @@ namespace SmartEmployment.DataAccess.Model
 					.WithMany(p => p.UserRoles)
 					.HasForeignKey(d => d.UserId)
 					.HasConstraintName("FK_UserRole_Users");
+				*/
 			});
 
 			modelBuilder.Entity<Timesheet>(entity =>

@@ -1,0 +1,16 @@
+﻿@model SmartEmployment.DataAccess.Model.Company
+
+<h1>Create a new Role</h1>
+<p>Enter a role name:</p>
+
+<form method="post">
+    Name:
+    <input asp-for="@Model.Name" />
+    <br />
+    Company code:
+    <input asp-for="@Model.CompanyCode" />
+    Postal code:
+    <input asp-for="@Model.CompanyAddresses.First().PostalCode" />
+    <br />
+    <input type="submit" />
+</form>

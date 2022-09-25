@@ -3,25 +3,25 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SmartEmployment.DataAccess.Model;
 using SmartEmployment.Repository.Abstract;
+using SmartEmployment.Repository.Concrete;
 
 namespace SmartEmployment.MVC.Controllers
 {
 	public class RolesController : Controller
 	{
 
-		// private IEntityBaseRepository<Role> _roleRepository; 
-		/*
+		private RoleRepository _roleRepository; 
+		
 		public RolesController(IEntityBaseRepository<Role> roleRepository)
 		{
-			_roleRepository = roleRepository;
+			_roleRepository = (RoleRepository)roleRepository;
 		}
-		*/
 
-		[Authorize]
 		// GET: RolesController
+		[Authorize(Roles = "Global")]
 		public ActionResult Index()
 		{
-			return View();
+			return View(_roleRepository.GetAll());
 		}
 
 		// GET: RolesController/Details/5
@@ -31,6 +31,7 @@ namespace SmartEmployment.MVC.Controllers
 		}
 
 		// GET: RolesController/Create
+		[Authorize(Roles = "Manager")]
 		public ActionResult Create()
 		{
 			var role = new Role(); 
@@ -46,7 +47,8 @@ namespace SmartEmployment.MVC.Controllers
 			try
 			{
 				role.Name = collection["Name"];
-				// _roleRepository.Add(role); 
+				_roleRepository.Add(role);
+				_roleRepository.CreateRole(role.Name);
 				return RedirectToAction(nameof(Index));
 			}
 			catch

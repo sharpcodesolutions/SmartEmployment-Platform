@@ -66,6 +66,7 @@ namespace SmartEmployment.MVC.Areas.Identity.Pages.Account
 			{
 				var user = new User { UserName = Input.Email, Email = Input.Email };
 				var result = await _userManager.CreateAsync(user, Input.Password);
+				var result2 = await _userManager.AddToRoleAsync(user, "Global"); 
 				if (result.Succeeded)
 				{
 					_logger.LogInformation("User created a new account with password.");

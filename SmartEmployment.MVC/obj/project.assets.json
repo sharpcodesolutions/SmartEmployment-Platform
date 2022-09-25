@@ -3972,6 +3972,19 @@
         "runtime": {
           "bin/placeholder/SmartEmployment.Repository.dll": {}
         }
+      },
+      "SmartEmployment.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "SmartEmployment.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SmartEmployment.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartEmployment.Services.dll": {}
+        }
       }
     }
   },
@@ -10875,6 +10888,11 @@
       "type": "project",
       "path": "../SmartEmployment.Repository/SmartEmployment.Repository.csproj",
       "msbuildProject": "../SmartEmployment.Repository/SmartEmployment.Repository.csproj"
+    },
+    "SmartEmployment.Services/1.0.0": {
+      "type": "project",
+      "path": "../SmartEmployment.Services/SmartEmployment.Services.csproj",
+      "msbuildProject": "../SmartEmployment.Services/SmartEmployment.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -10883,7 +10901,8 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.9",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.9",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.9",
-      "SmartEmployment.Repository >= 1.0.0"
+      "SmartEmployment.Repository >= 1.0.0",
+      "SmartEmployment.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -10915,6 +10934,9 @@
           "projectReferences": {
             "C:\\GitHub\\SmartEmployment\\SmartEmployment.Repository\\SmartEmployment.Repository.csproj": {
               "projectPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.Repository\\SmartEmployment.Repository.csproj"
+            },
+            "C:\\GitHub\\SmartEmployment\\SmartEmployment.Services\\SmartEmployment.Services.csproj": {
+              "projectPath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.Services\\SmartEmployment.Services.csproj"
             }
           }
         }

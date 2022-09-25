@@ -12,7 +12,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.9",
           "Microsoft.EntityFrameworkCore.Design": "6.0.9",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.9",
-          "SmartEmployment.Repository": "1.0.0"
+          "SmartEmployment.Repository": "1.0.0",
+          "SmartEmployment.Services": "1.0.0"
         },
         "runtime": {
           "SmartEmployment.MVC.dll": {}
@@ -2436,6 +2437,14 @@
         "runtime": {
           "SmartEmployment.Repository.dll": {}
         }
+      },
+      "SmartEmployment.Services/1.0.0": {
+        "dependencies": {
+          "SmartEmployment.Repository": "1.0.0"
+        },
+        "runtime": {
+          "SmartEmployment.Services.dll": {}
+        }
       }
     }
   },
@@ -3830,6 +3839,11 @@
       "sha512": ""
     },
     "SmartEmployment.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SmartEmployment.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
