@@ -62,11 +62,12 @@ namespace SmartEmployment.Repository.Abstract
 			return _context.Set<T>().Where(predicate);
 		}
 
-		public virtual void Add(T entity)
+		public T Add(T entity)
 		{
 			var dbEntityEntry = _context.Entry<T>(entity);
 			_context.Set<T>().Add(entity);
 			Commit();
+			return entity; 
 		}
 
 		public virtual void Update(T entity)

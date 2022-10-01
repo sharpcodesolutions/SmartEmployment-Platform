@@ -22,7 +22,7 @@ namespace SmartEmployment.Repository.Abstract
 		  params Expression<Func<T, object>>[] includeProperties
 		);
 		IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate);
-		void Add(T entity);
+		T Add(T entity);
 		void Update(T entity);
 		void Delete(T entity);
 		void DeleteWhere(Expression<Func<T, bool>> predicate);

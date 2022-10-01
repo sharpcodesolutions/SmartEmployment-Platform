@@ -20,10 +20,10 @@ namespace SmartEmployment.DataAccess.Model
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }
 		public string FirstName { get; set; }
-		public string MiddleName { get; set; }
+		public string? MiddleName { get; set; }
 		public string LastName { get; set; }
 		public byte[] Version { get; set; }
-		public string PreferredName { get; set; }
+		public string? PreferredName { get; set; }
 		public int? Gender { get; set; }
 		public int? Title { get; set; }
 		[DataType(DataType.Date)]

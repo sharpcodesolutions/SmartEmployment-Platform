@@ -1,4 +1,5 @@
 ﻿using SmartEmployment.DataAccess.Model;
+using SmartEmployment.Services.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,13 @@ namespace SmartEmployment.Services.Abstract
 {
     public interface IEmployeeService
     {
-        List<Employee> GetAllEmployees();
-        List<Employee> GetAllEmployeesForManager(string managerCode); 
-        List<Employee> GetAllEmployeesForCompany(int companyId);
-        public void CreateEmployee(Employee employee);
-        public Employee CreateEmployeeForManager(string managerCode, Employee employee);
-        public Employee CreateEmployeeForCompany(string companyCode, Employee employee);
+        List<EmployeeServiceModel> GetAllEmployees();
+        List<EmployeeServiceModel> GetAllEmployeesForManager(string managerCode); 
+        List<EmployeeServiceModel> GetAllEmployeesForCompany(int companyId);
+        public void CreateEmployee(EmployeeServiceModel employee, User user);
+		public void CreateEmployees(List<EmployeeServiceModel> employee);
+		public EmployeeServiceModel CreateEmployeeForManager(string managerCode, EmployeeServiceModel employee);
+        public EmployeeServiceModel CreateEmployeeForCompany(string companyCode, EmployeeServiceModel employee);
         public void AssignEmployeeToManager(string employeeCode, string managerCode); 
     }
 }

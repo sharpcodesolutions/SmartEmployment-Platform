@@ -1,0 +1,18 @@
+﻿@model SmartEmployment.Services.Model.UserServiceModel
+
+<h1>Create a new User</h1>
+<p>Enter a role name:</p>
+
+<form method="post">
+    Name:
+    <input asp-for="@Model.UserName" />
+    Password:
+    <input asp-for="@Model.Password" />
+    @Html.DropDownListFor(m => Model.Role, new SelectList(Model.Roles, "Value", "Text"), htmlAttributes: new {@class = "form-control", id= "Roles"})
+    @if(User.IsInRole("Global")) 
+    {
+        @Html.DropDownListFor(m => Model.CompanyCode, new SelectList(Model.Companies, "Value", "Text"), htmlAttributes: new {@class = "form-control", id= "Companies"})
+    }
+
+    <input type="submit" />
+</form>

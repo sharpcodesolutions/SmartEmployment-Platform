@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZXrV4zEDpkMSVn3/UDJ6dMKNXXm1lYdlf63MfwDGGaE=",
+  "Hash": "9vMrDLz1zODgmCe4UT8wcVEEgi2Tjp2qwLiAKXEA1y4=",
   "Source": "SmartEmployment.MVC",
   "BasePath": "_content/SmartEmployment.MVC",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\GitHub\\SmartEmployment\\SmartEmployment.MVC\\wwwroot\\files\\Employees.xlsx",
+      "SourceId": "SmartEmployment.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GitHub\\SmartEmployment\\SmartEmployment.MVC\\wwwroot\\",
+      "BasePath": "_content/SmartEmployment.MVC",
+      "RelativePath": "files/Employees.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\Employees.xlsx"
     },
     {
       "Identity": "C:\\GitHub\\SmartEmployment\\SmartEmployment.MVC\\wwwroot\\js\\site.js",

@@ -32,6 +32,7 @@ builder.Services.AddIdentity<User, Role>(
 builder.Services.AddScoped<IEntityBaseRepository<Role>, RoleRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
 builder.Services.ConfigureApplicationCookie(options =>
 {

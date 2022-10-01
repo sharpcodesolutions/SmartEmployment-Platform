@@ -275,3 +275,8 @@ C:\GitHub\SmartEmployment\SmartEmployment.MVC\bin\Debug\net6.0\Microsoft.Extensi
 C:\GitHub\SmartEmployment\SmartEmployment.MVC\obj\Debug\net6.0\SmartEmployment.MVC.MvcApplicationPartsAssemblyInfo.cs
 C:\GitHub\SmartEmployment\SmartEmployment.MVC\bin\Debug\net6.0\SmartEmployment.Services.dll
 C:\GitHub\SmartEmployment\SmartEmployment.MVC\bin\Debug\net6.0\SmartEmployment.Services.pdb
+C:\GitHub\SmartEmployment\SmartEmployment.MVC\bin\Debug\net6.0\ExcelDataReader.dll
+C:\GitHub\SmartEmployment\SmartEmployment.MVC\bin\Debug\net6.0\System.Data.OleDb.dll
+C:\GitHub\SmartEmployment\SmartEmployment.MVC\bin\Debug\net6.0\System.Diagnostics.PerformanceCounter.dll
+C:\GitHub\SmartEmployment\SmartEmployment.MVC\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Data.OleDb.dll
+C:\GitHub\SmartEmployment\SmartEmployment.MVC\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.PerformanceCounter.dll

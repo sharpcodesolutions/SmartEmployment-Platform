@@ -17,9 +17,9 @@ namespace SmartEmployment.DataAccess.Model
 		}
 
 		public int Id { get; set; }
-		public int? PersonId { get; set; }
+		public int PersonId { get; set; }
 		public byte[] Version { get; set; }
-		public int? CompanyId { get; set; }
+		public int CompanyId { get; set; }
 		public string EmployeeCode { get; set; }
 		public DateTime? TerminationDate { get; set; }
 		public bool Deleted { get; set; }
@@ -30,7 +30,7 @@ namespace SmartEmployment.DataAccess.Model
 		public DateTime StartDate { get; set; }
 		public bool Draft { get; set; }
 
-		public string About { get; set; }
+		public string? About { get; set; }
 
 		public virtual Person Person { get; set; }
 		public virtual Company Company { get; set; }

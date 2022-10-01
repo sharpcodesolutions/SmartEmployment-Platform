@@ -31,7 +31,6 @@ namespace SmartEmployment.MVC.Controllers
 		}
 
 		// GET: RolesController/Create
-		[Authorize(Roles = "Manager")]
 		public ActionResult Create()
 		{
 			var role = new Role(); 
