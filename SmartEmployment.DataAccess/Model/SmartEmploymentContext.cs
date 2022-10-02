@@ -34,6 +34,7 @@ namespace SmartEmployment.DataAccess.Model
 		public virtual DbSet<UserRole> UserRoles { get; set; }
 		public virtual DbSet<CompanyAddress> CompanyAddresses { get; set; }
 		public virtual DbSet<Photo> Photos { get; set; }
+		public virtual DbSet<Relationship> Relationships { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -271,6 +272,20 @@ namespace SmartEmployment.DataAccess.Model
 				entity.HasOne(d => d.Employee)
 					.WithMany(p => p.EmployeeTimesheetValues)
 					.HasConstraintName("FK_EmployeeTimesheetValue_Employee");
+			});
+
+			modelBuilder.Entity<Relationship>(entity =>
+			{
+				entity.ToTable("Relationship");
+
+				entity.Property(e => e.StartDate).HasColumnType("datetime");
+
+				entity.Property(e => e.FinishedDate).HasColumnType("datetime");
+
+				entity.Property(e => e.Version)
+					.IsRequired()
+					.IsRowVersion()
+					.IsConcurrencyToken();
 			});
 
 			OnModelCreatingPartial(modelBuilder);

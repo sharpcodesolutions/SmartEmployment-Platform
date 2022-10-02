@@ -20,8 +20,17 @@ var companyRepository = new CompanyRepository(dbContext);
 var person = new Person();
 var personRepository = new PersonRepository(dbContext);
 
+var relationship = new Relationship();
+relationship.EmployeeCode = "JKJ";
+relationship.ManagerCode = "SDD"; 
+relationship.StartDate = DateTime.Now;
+var relationshipRepository = new RelationshipRepository(dbContext);
+relationshipRepository.Add(relationship); 
 
-Console.WriteLine("Process completed!");
+var rr = relationshipRepository.GetAll(); 
+
+
+Console.WriteLine("Process completed!" + rr.ToString());
 
 var role = new Role(); 
 // var roleRepository = new RoleRepository(dbContext);

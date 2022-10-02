@@ -63,7 +63,23 @@ namespace SmartEmployment.MVC.Controllers
             UserServiceModel userSV = new UserServiceModel();
             userSV.UserName = collection["UserName"];
             userSV.Password = collection["Password"];
-            var comapny = collection["CompanyCode"];
+            var IsEmployeeUser = collection["IsEmployeeUser"];
+            userSV.IsEmployeeUser = IsEmployeeUser == false ? false : true;
+            userSV.CompanyCode = collection["CompanyCode"];
+            userSV.Firstname = collection["Firstname"];
+            userSV.Lastname = collection["Lastname"];
+            userSV.Email = collection["Email"];
+            userSV.Birthdate = Convert.ToDateTime(collection["Birthdate"]);
+            userSV.StartDate = Convert.ToDateTime(collection["StartDate"]);
+            if(string.IsNullOrEmpty(collection["EndDate"]))
+			{
+				userSV.EndDate = null;
+			}
+            else
+            {
+				userSV.EndDate = Convert.ToDateTime(collection["EndDate"]);
+			}
+
             var role = int.Parse(collection["Role"]);
             try
             {

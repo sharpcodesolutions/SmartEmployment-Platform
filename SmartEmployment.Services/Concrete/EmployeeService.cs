@@ -15,11 +15,13 @@ namespace SmartEmployment.Services.Concrete
 		private EmployeeRepository _employeeRepository;
         private PersonRepository _personRepository;
         private CompanyRepository _companyRepository;
+        private UserRepository _userRepository;
 		public EmployeeService(SmartEmploymentContext context)
 		{
 			_employeeRepository = new EmployeeRepository(context);
             _personRepository = new PersonRepository(context);
             _companyRepository = new CompanyRepository(context);
+            _userRepository = new UserRepository(context);
 		}
 		public void AssignEmployeeToManager(string employeeCode, string managerCode)
         {
@@ -91,7 +93,35 @@ namespace SmartEmployment.Services.Concrete
             return employeeSMs.ToList();
 		}
 
-        public List<EmployeeServiceModel> GetAllEmployeesForCompany(int companyId)
+		public List<EmployeeServiceModel> GetAllEmployeesForUser(int userId)
+		{
+            var user = _userRepository.GetSingle(userId); 
+            if (user == null)
+            {
+
+            }
+			List<EmployeeServiceModel> employeeSMs = new List<EmployeeServiceModel>();
+			var employees = _employeeRepository.GetAll();
+			foreach (var employee in employees)
+			{
+				EmployeeServiceModel employeeSM = new EmployeeServiceModel();
+				employeeSM.Id = employee.Id;
+				employeeSM.EmployeeCode = employee.EmployeeCode;
+				var companies = _companyRepository.GetAll();
+				employeeSM.CompanyCode = companies.FirstOrDefault(c => c.Id == employee.CompanyId).CompanyCode;
+				var people = _personRepository.GetAll();
+				var person = people.FirstOrDefault(p => p.Id == employee.PersonId);
+				employeeSM.Firstname = person.FirstName;
+				employeeSM.Lastname = person.LastName;
+				employeeSM.Birthdate = person.BirthDate;
+				employeeSM.StartDate = employee.StartDate;
+				employeeSM.TerminationDate = employee.TerminationDate;
+				employeeSMs.Add(employeeSM);
+			}
+			return employeeSMs.ToList();
+		}
+
+		public List<EmployeeServiceModel> GetAllEmployeesForCompany(int companyId)
         {
 			throw new NotImplementedException();
 		}

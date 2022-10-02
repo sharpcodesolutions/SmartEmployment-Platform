@@ -11,7 +11,8 @@ namespace SmartEmployment.Services.Abstract
     public interface IEmployeeService
     {
         List<EmployeeServiceModel> GetAllEmployees();
-        List<EmployeeServiceModel> GetAllEmployeesForManager(string managerCode); 
+		List<EmployeeServiceModel> GetAllEmployeesForUser(int userId);
+		List<EmployeeServiceModel> GetAllEmployeesForManager(string managerCode); 
         List<EmployeeServiceModel> GetAllEmployeesForCompany(int companyId);
         public void CreateEmployee(EmployeeServiceModel employee, User user);
 		public void CreateEmployees(List<EmployeeServiceModel> employee);

@@ -1,4 +1,5 @@
 ﻿using ExcelDataReader;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
@@ -10,9 +11,11 @@ using SmartEmployment.Services.Concrete;
 using SmartEmployment.Services.Model;
 using System.ComponentModel;
 using System.Data;
+using System.Security.Claims;
 
 namespace SmartEmployment.MVC.Controllers
 {
+    [Authorize(Roles = "Global, Manager, Admin")]
     public class EmployeesController : Controller
     {
 		private EmployeeService _employeeService;
@@ -22,14 +25,13 @@ namespace SmartEmployment.MVC.Controllers
 		public EmployeesController(IEmployeeService employeeService)
 		{
 			_employeeService = (EmployeeService)employeeService;
-			// Environment = _environment;
-			// Configuration = _configuration;
 		}
 
 		// GET: EmployeesController
 		public ActionResult Index()
         {
-            return View(_employeeService.GetAllEmployees());
+			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+			return View(_employeeService.GetAllEmployees());
         }
 
 		[HttpPost]
