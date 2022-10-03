@@ -30,8 +30,8 @@ namespace SmartEmployment.MVC.Controllers
 		// GET: EmployeesController
 		public ActionResult Index()
         {
-			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-			return View(_employeeService.GetAllEmployees());
+			int userId = Int32.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+			return View(_employeeService.GetAllEmployeesForUser(userId));
         }
 
 		[HttpPost]
