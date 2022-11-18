@@ -17,7 +17,7 @@ namespace SmartEmployment.Repository.Concrete
 {
     public class RoleRepository : EntityBaseRepository<Role>
 	{
-		public RoleRepository(SmartEmploymentContext context) : base(context) { }
+		public RoleRepository() : base() { }
 
 		public async Task CreateRole(string roleName)
 		{

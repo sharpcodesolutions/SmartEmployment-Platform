@@ -11,10 +11,11 @@ namespace SmartEmployment.Services.Abstract
 {
 	public interface IUserService
 	{
-		public List<User> GetAllUsers(); 
+		public List<UserServiceModel> GetAllUsers(); 
 		public User GetUserById(int userId);
-		public User GetUserByName(string userName);
+		public UserServiceModel GetUserByName(string userName);
 		public User CreateNewUser(UserServiceModel user, int? roleId); 
 		public List<Role> GetAllRoles();
+		public List<string> GetRolesForUser(string username); 
 	}
 }

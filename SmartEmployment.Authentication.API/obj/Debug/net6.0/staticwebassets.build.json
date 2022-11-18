@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0kaUAH7TgiWeEuBBhi58oQAHlPfmMaEczTZ5cnCIdYQ=",
+  "Source": "SmartEmployment.Authentication.API",
+  "BasePath": "_content/SmartEmployment.Authentication.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

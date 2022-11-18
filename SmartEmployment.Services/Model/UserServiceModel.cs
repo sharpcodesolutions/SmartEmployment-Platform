@@ -12,11 +12,12 @@ namespace SmartEmployment.Services.Model
 {
 	public class UserServiceModel
 	{
+		public int Id { get; set; }
 		public string UserName { get; set; }
 		public string Password { get; set; }
 		public bool IsEmployeeUser { get; set; }
-		public Role Role { get; set; }
 		public IEnumerable<SelectListItem> Roles { get; set; }		
+		public IEnumerable<SelectListItem> Claims { get; set; }
 		public string CompanyCode { get; set; }
 		public IEnumerable<SelectListItem> Companies { get; set; }
 		public string Firstname { get; set; }

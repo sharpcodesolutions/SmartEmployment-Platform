@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartEmployment.Console", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartEmployment.MVC", "SmartEmployment.MVC\SmartEmployment.MVC.csproj", "{905C4C10-6FC4-4644-8AC6-780D86B8555B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartEmployment.Services", "SmartEmployment.Services\SmartEmployment.Services.csproj", "{71AA91BF-4CA5-4B09-958B-CF13469F53FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartEmployment.Services", "SmartEmployment.Services\SmartEmployment.Services.csproj", "{71AA91BF-4CA5-4B09-958B-CF13469F53FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartEmployment.API", "SmartEmployment.API\SmartEmployment.API.csproj", "{F70DC667-5F8F-46C5-A11D-7CD0DA5AC859}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartEmployment.Authentication.API", "SmartEmployment.Authentication.API\SmartEmployment.Authentication.API.csproj", "{FB1C32A1-458E-473E-B761-34AB9EF94412}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{71AA91BF-4CA5-4B09-958B-CF13469F53FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71AA91BF-4CA5-4B09-958B-CF13469F53FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71AA91BF-4CA5-4B09-958B-CF13469F53FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70DC667-5F8F-46C5-A11D-7CD0DA5AC859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70DC667-5F8F-46C5-A11D-7CD0DA5AC859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70DC667-5F8F-46C5-A11D-7CD0DA5AC859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70DC667-5F8F-46C5-A11D-7CD0DA5AC859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB1C32A1-458E-473E-B761-34AB9EF94412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB1C32A1-458E-473E-B761-34AB9EF94412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB1C32A1-458E-473E-B761-34AB9EF94412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB1C32A1-458E-473E-B761-34AB9EF94412}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

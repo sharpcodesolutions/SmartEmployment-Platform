@@ -17,13 +17,13 @@ namespace SmartEmployment.Services.Concrete
         private CompanyRepository _companyRepository;
         private UserRepository _userRepository;
         private RelationshipRepository _relationshipRepository; 
-		public EmployeeService(SmartEmploymentContext context)
+		public EmployeeService()
 		{
-			_employeeRepository = new EmployeeRepository(context);
-            _personRepository = new PersonRepository(context);
-            _companyRepository = new CompanyRepository(context);
-            _userRepository = new UserRepository(context);
-            _relationshipRepository = new RelationshipRepository(context);
+			_employeeRepository = new EmployeeRepository();
+            _personRepository = new PersonRepository();
+            _companyRepository = new CompanyRepository();
+            _userRepository = new UserRepository();
+            _relationshipRepository = new RelationshipRepository();
 		}
 		public void AssignEmployeeToManager(string employeeCode, string managerCode)
         {

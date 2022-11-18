@@ -10,6 +10,6 @@ namespace SmartEmployment.Repository.Concrete
 {
     public class RelationshipRepository : EntityBaseRepository<Relationship>
 	{
-		public RelationshipRepository(SmartEmploymentContext context) : base(context) { }
+		public RelationshipRepository() : base() { }
 	}
 }

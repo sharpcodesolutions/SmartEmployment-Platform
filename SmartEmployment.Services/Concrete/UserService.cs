@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SmartEmployment.DataAccess.Model;
 using SmartEmployment.Repository.Abstract;
 using SmartEmployment.Repository.Concrete;
@@ -19,13 +20,15 @@ namespace SmartEmployment.Services.Concrete
 		private RoleRepository _roleRepository;
 		private CompanyRepository _companyRepository;
 		private PersonRepository _personRepository;
-		public UserService(UserManager<User> userManager, SmartEmploymentContext context)
+		private UserRoleRepository _userRoleRepository;
+		public UserService(UserManager<User> userManager)
 		{
 			_userManager = userManager;
-			_userRepository = new UserRepository(context);
-			_roleRepository = new RoleRepository(context);
-			_companyRepository = new CompanyRepository(context);
-			_personRepository = new PersonRepository(context);
+			_userRepository = new UserRepository();
+			_roleRepository = new RoleRepository();
+			_companyRepository = new CompanyRepository();
+			_personRepository = new PersonRepository();
+			_userRoleRepository = new UserRoleRepository();
 		}
 
         public User CreateNewUser(UserServiceModel userSV, int? roleId)
@@ -65,9 +68,15 @@ namespace SmartEmployment.Services.Concrete
 			}
         }
 
-        public List<User> GetAllUsers()
+        public List<UserServiceModel> GetAllUsers()
         {
-            return _userRepository.GetAll().ToList(); 
+			List<UserServiceModel> allUserServiceModel = new List<UserServiceModel>();
+			var allUsers = _userRepository.GetAll().ToList(); 
+			foreach(var user in allUsers)
+			{
+				allUserServiceModel.Add(MapUserToUserServiceModel(user));
+			}
+			return allUserServiceModel;
         }
 
 		public User GetUserById(int userId)
@@ -75,15 +84,54 @@ namespace SmartEmployment.Services.Concrete
             return _userRepository.GetSingle(userId); 
         }
 
-        public User GetUserByName(string userName)
+        public UserServiceModel GetUserByName(string userName)
         {
-			var users = _userRepository.GetAll();
-            return users.FirstOrDefault(u => u.UserName == userName);
+			var user = _userRepository.GetAll().FirstOrDefault(u => u.UserName == userName);
+			if (user != null)
+			{
+				return MapUserToUserServiceModel(user);
+			}
+			else
+			{
+				return null; 
+			}
 		}
 
 		public List<Role> GetAllRoles()
 		{
 			return _roleRepository.GetAll().ToList(); 
+		}
+
+		public List<string> GetRolesForUser(string username)
+		{
+			var user = GetUserByName(username);
+			var userRoles = _userRoleRepository.GetAll().Where(ur => ur.UserId == user.Id);
+			var roles = _roleRepository.GetAll().Where(r => userRoles.Any(ur => ur.RoleId == r.Id)).Select(r => r.Name).ToList();
+			return roles; 
+		}
+
+		private UserServiceModel MapUserToUserServiceModel(User user)
+		{
+			var userServiceModel = new UserServiceModel();
+			var userroles = _userRoleRepository.GetAll().Where(ur => ur.UserId == user.Id);
+
+			userServiceModel.Id = user.Id;
+			userServiceModel.UserName = user.UserName;
+			userServiceModel.Password = user.PasswordHash; 
+			userServiceModel.Roles = _roleRepository.GetAll()
+				.Where(r => userroles.Any(ur => ur.RoleId == r.Id))
+				.Select(r => new SelectListItem() { Text = r.Name, Value = r.Name});
+
+			if (user.PersonId != null)
+			{
+				var person = _personRepository.GetSingle(user.PersonId.Value);
+				userServiceModel.Firstname = person.FirstName;
+				userServiceModel.Lastname = person.LastName;
+				userServiceModel.Email = person.Email;
+				userServiceModel.Birthdate = person.BirthDate;
+			}
+
+			return userServiceModel;
 		}
 	}
 }

@@ -13,9 +13,9 @@ namespace SmartEmployment.Repository.Abstract
 	{
 		private SmartEmploymentContext _context;
 
-		public EntityBaseRepository(SmartEmploymentContext context)
+		public EntityBaseRepository()
 		{
-			_context = context;
+			_context = new SmartEmploymentContext();
 		}
 		public virtual IEnumerable<T> GetAll()
 		{

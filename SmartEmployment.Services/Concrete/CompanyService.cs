@@ -13,10 +13,10 @@ namespace SmartEmployment.Services.Concrete
     {
 		private CompanyRepository _companyRepository;
 		private CompanyAddressRepository _companyAddressRepository;
-		public CompanyService(SmartEmploymentContext context)
+		public CompanyService()
 		{
-			_companyRepository = new CompanyRepository(context);
-			_companyAddressRepository = new CompanyAddressRepository(context);	
+			_companyRepository = new CompanyRepository();
+			_companyAddressRepository = new CompanyAddressRepository();	
 		}
 
 		public List<Company> GetAllCompanies()

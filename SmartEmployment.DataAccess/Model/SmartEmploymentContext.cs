@@ -229,6 +229,8 @@ namespace SmartEmployment.DataAccess.Model
 					.IsRowVersion()
 					.IsConcurrencyToken();
 
+				entity.Ignore(e => e.Id); 
+
 				/*
 				entity.HasOne(d => d.Role)
 					.WithMany(p => p.UserRoles)

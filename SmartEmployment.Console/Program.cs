@@ -15,16 +15,16 @@ optionsBuilder.UseSqlServer(connectionstring);
 SmartEmploymentContext dbContext = new SmartEmploymentContext();
 
 var company = new Company();
-var companyRepository = new CompanyRepository(dbContext);
+var companyRepository = new CompanyRepository();
 
 var person = new Person();
-var personRepository = new PersonRepository(dbContext);
+var personRepository = new PersonRepository();
 
 var relationship = new Relationship();
 relationship.EmployeeCode = "JKJ";
 relationship.ManagerCode = "SDD"; 
 relationship.StartDate = DateTime.Now;
-var relationshipRepository = new RelationshipRepository(dbContext);
+var relationshipRepository = new RelationshipRepository();
 relationshipRepository.Add(relationship); 
 
 var rr = relationshipRepository.GetAll(); 
