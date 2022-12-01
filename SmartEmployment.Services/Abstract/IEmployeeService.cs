@@ -12,6 +12,7 @@ namespace SmartEmployment.Services.Abstract
     {
         List<EmployeeServiceModel> GetAllEmployees();
 		List<EmployeeServiceModel> GetAllEmployeesForUser(int userId);
+		List<EmployeeServiceModel> GetAllEmployeesForUser(string username);
 		List<EmployeeServiceModel> GetAllEmployeesForManager(string managerCode); 
         List<EmployeeServiceModel> GetAllEmployeesForCompany(int companyId);
         public void CreateEmployee(EmployeeServiceModel employee, User user);

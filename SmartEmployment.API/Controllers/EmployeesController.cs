@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using SmartEmployment.Services.Abstract;
 using SmartEmployment.Services.Concrete;
 using SmartEmployment.Services.Model;
+using System.Net;
+using System.Security;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,26 +15,40 @@ namespace SmartEmployment.API.Controllers
 	[ApiController]
 	public class EmployeesController : ControllerBase
 	{
-		private EmployeeService _employeeService;
+		private IEmployeeService _employeeService;
 
 		public EmployeesController(IEmployeeService employeeService)
 		{
-			_employeeService = (EmployeeService)employeeService;
+			_employeeService = employeeService;
 		}
 
 		// GET: api/<EmployeesController>
-		[HttpGet]
-		public IEnumerable<EmployeeServiceModel> Get()
+		[HttpGet("{username}")]
+		public IActionResult Get(string username)
 		{
-			return _employeeService.GetAllEmployees();
+			try
+			{
+				var employees = _employeeService.GetAllEmployeesForUser(username);
+				return Ok(employees);
+			}
+			catch(UnauthorizedAccessException e)
+			{
+				return StatusCode(StatusCodes.Status403Forbidden); 
+			}
+			catch(SecurityException e)
+			{
+				return StatusCode(StatusCodes.Status401Unauthorized);
+			}
 		}
 
+		/*
 		// GET api/<EmployeesController>/5
 		[HttpGet("{id}")]
 		public string Get(int id)
 		{
 			return "value";
 		}
+		*/
 
 		// POST api/<EmployeesController>
 		[HttpPost]

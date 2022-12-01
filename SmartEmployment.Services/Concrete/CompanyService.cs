@@ -21,7 +21,8 @@ namespace SmartEmployment.Services.Concrete
 
 		public List<Company> GetAllCompanies()
 		{
-			return _companyRepository.GetAll().ToList();
+			throw new NotImplementedException();
+			// return (await _companyRepository.GetAll()).ToList();
 		}
 
 		public void CreateCompany(Company company)
@@ -36,7 +37,8 @@ namespace SmartEmployment.Services.Concrete
 
 		public Company GetCompanyByCode(string companyCode)
 		{
-			return _companyRepository.GetAll().FirstOrDefault(c => c.CompanyCode == companyCode); 
+			throw new NotImplementedException();
+			// return _companyRepository.GetAll().FirstOrDefault(c => c.CompanyCode == companyCode); 
 		}
 
 		public void CreateCompanyAddress(CompanyAddress companyAddress)

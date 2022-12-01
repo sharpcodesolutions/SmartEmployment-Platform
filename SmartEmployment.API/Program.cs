@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using SmartEmployment.API.Models;
 using SmartEmployment.DataAccess.Model;
+using SmartEmployment.Repository.Abstract;
+using SmartEmployment.Repository.Concrete;
 using SmartEmployment.Services.Abstract;
 using SmartEmployment.Services.Concrete;
 using System.Text;
@@ -13,6 +15,22 @@ builder.Services.AddCors();
 // Add services to the container.
 builder.Services.AddScoped<JwtHandler>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
+builder.Services.AddScoped<IEntityBaseRepository<Employee>, EntityBaseRepository<Employee>>();
+builder.Services.AddScoped<IEntityBaseRepository<Person>, EntityBaseRepository<Person>>();
+builder.Services.AddScoped<IEntityBaseRepository<Company>, EntityBaseRepository<Company>>();
+builder.Services.AddScoped<IEntityBaseRepository<User>, EntityBaseRepository<User>>();
+builder.Services.AddScoped<IEntityBaseRepository<Relationship>, EntityBaseRepository<Relationship>>();
+builder.Services.AddScoped<IEntityBaseRepository<UserRole>, EntityBaseRepository<UserRole>>();
+builder.Services.AddScoped<IEntityBaseRepository<Role>, EntityBaseRepository<Role>>();
+
+builder.Services.AddScoped<EntityBaseRepository<Employee>, EmployeeRepository>();
+builder.Services.AddScoped<EntityBaseRepository<Person>, PersonRepository>();
+builder.Services.AddScoped<EntityBaseRepository<Company>, CompanyRepository>();
+builder.Services.AddScoped<EntityBaseRepository<User>, UserRepository>();
+builder.Services.AddScoped<EntityBaseRepository<Relationship>, RelationshipRepository>();
+builder.Services.AddScoped<EntityBaseRepository<UserRole>, UserRoleRepository>();
+builder.Services.AddScoped<EntityBaseRepository<Role>, RoleRepository>();
 
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 builder.Services.AddAuthentication(opt =>
@@ -48,15 +66,18 @@ if (app.Environment.IsDevelopment())
 	app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
 app.MapControllers();
 app.UseCors(options =>
 	 options.WithOrigins("http://localhost:4200")
 			.AllowAnyHeader()
+			.AllowCredentials()
 			.AllowAnyMethod());
+
+app.UseHttpsRedirection();
 
 app.UseAuthentication(); 
 app.UseAuthorization();
 
 app.Run();
+
+public partial class Program { }

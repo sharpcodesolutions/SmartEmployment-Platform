@@ -34,6 +34,22 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
+builder.Services.AddScoped<IEntityBaseRepository<Employee>, EntityBaseRepository<Employee>>();
+builder.Services.AddScoped<IEntityBaseRepository<Person>, EntityBaseRepository<Person>>();
+builder.Services.AddScoped<IEntityBaseRepository<Company>, EntityBaseRepository<Company>>();
+builder.Services.AddScoped<IEntityBaseRepository<User>, EntityBaseRepository<User>>();
+builder.Services.AddScoped<IEntityBaseRepository<Relationship>, EntityBaseRepository<Relationship>>();
+builder.Services.AddScoped<IEntityBaseRepository<UserRole>, EntityBaseRepository<UserRole>>();
+builder.Services.AddScoped<IEntityBaseRepository<Role>, EntityBaseRepository<Role>>();
+
+builder.Services.AddScoped<EntityBaseRepository<Employee>, EmployeeRepository>();
+builder.Services.AddScoped<EntityBaseRepository<Person>, PersonRepository>();
+builder.Services.AddScoped<EntityBaseRepository<Company>, CompanyRepository>();
+builder.Services.AddScoped<EntityBaseRepository<User>, UserRepository>();
+builder.Services.AddScoped<EntityBaseRepository<Relationship>, RelationshipRepository>();
+builder.Services.AddScoped<EntityBaseRepository<UserRole>, UserRoleRepository>();
+builder.Services.AddScoped<EntityBaseRepository<Role>, RoleRepository>();
+
 builder.Services.ConfigureApplicationCookie(options =>
 {
 	// Cookie settings

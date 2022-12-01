@@ -19,7 +19,7 @@ namespace SmartEmployment.Repository.Abstract
 		}
 		public virtual IEnumerable<T> GetAll()
 		{
-			return _context.Set<T>().AsEnumerable();
+			return _context.Set<T>().AsEnumerable(); 
 		}
 
 		public virtual int Count()
