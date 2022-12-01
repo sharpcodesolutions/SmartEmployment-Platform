@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "z+FwXmHzzjT6ATXVAk/HvUTvu+FNWU7XYeZv6xgmcMPmPduTU3tya1bUPVY0COxhsQ0kZruWUxhFuDSSLL4KAg==",
+  "dgSpecHash": "6gc3+jfXG8yErClVczTSOCSUjHTabvmT9NQsH/Zfulk4dqUb/noJTE3Auix1ZvzP/29WFjo23OdHtl6/ZO3AfA==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.Repository\\SmartEmployment.Repository.csproj",
   "expectedPackageFiles": [
@@ -51,7 +51,10 @@
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
-    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512"
   ],
   "logs": []
 }

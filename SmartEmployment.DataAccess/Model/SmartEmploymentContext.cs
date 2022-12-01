@@ -290,6 +290,30 @@ namespace SmartEmployment.DataAccess.Model
 					.IsConcurrencyToken();
 			});
 
+			modelBuilder.Entity<Schedule>(entity =>
+			{
+				entity.ToTable("Schedule");
+
+				entity.Property(e => e.Comments)
+					.HasMaxLength(255)
+					.IsUnicode(false);
+
+				entity.Property(e => e.Date).HasColumnType("date");
+
+				entity.Property(e => e.Hours).HasColumnType("decimal(28, 8)");
+
+				entity.Property(e => e.Version)
+					.IsRequired()
+					.IsRowVersion()
+					.IsConcurrencyToken();
+
+				entity.HasOne(d => d.Employee)
+					.WithMany(p => p.Schedules)
+					.HasForeignKey(d => d.EmployeeId)
+					.OnDelete(DeleteBehavior.ClientSetNull)
+					.HasConstraintName("FK_Schedule_Employee");
+			});
+
 			OnModelCreatingPartial(modelBuilder);
 		}
 		partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xyYhOZMbrnJIUjT0c4GbwwSA64u4dy+oSrigd3ECcrKseZBD8lT2hSTHjpXAD/dfLFtcwkTqvNR/TuulqdyPdA==",
+  "dgSpecHash": "R7AhdOWhyZfIFsPNC5bSTIO4QsG9m8mTMv9WLzEJ6otH1y7mdPLJKNwN5UUAPOOBH+vpZsStp9NFW99eyaVajQ==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.MVC\\SmartEmployment.MVC.csproj",
   "expectedPackageFiles": [
@@ -183,7 +183,11 @@
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.11\\microsoft.netcore.app.host.win-x64.6.0.11.nupkg.sha512",
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512"
   ],
   "logs": []
 }

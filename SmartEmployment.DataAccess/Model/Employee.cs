@@ -36,6 +36,7 @@ namespace SmartEmployment.DataAccess.Model
 		public virtual Company Company { get; set; }
 		public virtual ICollection<User> Users { get; set; }
 		public virtual ICollection<Photo> Photos { get; set; }
-		public virtual ICollection<EmployeeTimesheetValue> EmployeeTimesheetValues { get; set; }	
+		public virtual ICollection<EmployeeTimesheetValue> EmployeeTimesheetValues { get; set; }
+		public virtual ICollection<Schedule> Schedules { get; set; }
 	}
 }
