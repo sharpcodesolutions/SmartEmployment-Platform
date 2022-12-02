@@ -41,6 +41,7 @@ builder.Services.AddScoped<IEntityBaseRepository<User>, EntityBaseRepository<Use
 builder.Services.AddScoped<IEntityBaseRepository<Relationship>, EntityBaseRepository<Relationship>>();
 builder.Services.AddScoped<IEntityBaseRepository<UserRole>, EntityBaseRepository<UserRole>>();
 builder.Services.AddScoped<IEntityBaseRepository<Role>, EntityBaseRepository<Role>>();
+builder.Services.AddScoped<IEntityBaseRepository<Schedule>, EntityBaseRepository<Schedule>>();
 
 builder.Services.AddScoped<EntityBaseRepository<Employee>, EmployeeRepository>();
 builder.Services.AddScoped<EntityBaseRepository<Person>, PersonRepository>();
@@ -48,7 +49,7 @@ builder.Services.AddScoped<EntityBaseRepository<Company>, CompanyRepository>();
 builder.Services.AddScoped<EntityBaseRepository<User>, UserRepository>();
 builder.Services.AddScoped<EntityBaseRepository<Relationship>, RelationshipRepository>();
 builder.Services.AddScoped<EntityBaseRepository<UserRole>, UserRoleRepository>();
-builder.Services.AddScoped<EntityBaseRepository<Role>, RoleRepository>();
+builder.Services.AddScoped<EntityBaseRepository<Schedule>, ScheduleRepository>();
 
 builder.Services.ConfigureApplicationCookie(options =>
 {

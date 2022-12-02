@@ -10,8 +10,8 @@ namespace SmartEmployment.DataAccess.Model
 	{
 		public int Id { get; set; }
 		public DateTime Date { get; set; }
-		public TimeSpan? StartTime { get; set; }
-		public TimeSpan? EndTime { get; set; }
+		public DateTime? StartTime { get; set; }
+		public DateTime? EndTime { get; set; }
 		public decimal Hours { get; set; }
 		public string Comments { get; set; }
 		public bool Deleted { get; set; }

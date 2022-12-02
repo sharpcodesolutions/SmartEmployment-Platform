@@ -300,6 +300,10 @@ namespace SmartEmployment.DataAccess.Model
 
 				entity.Property(e => e.Date).HasColumnType("date");
 
+				entity.Property(e => e.StartTime).HasColumnType("date");
+
+				entity.Property(e => e.EndTime).HasColumnType("date");
+
 				entity.Property(e => e.Hours).HasColumnType("decimal(28, 8)");
 
 				entity.Property(e => e.Version)

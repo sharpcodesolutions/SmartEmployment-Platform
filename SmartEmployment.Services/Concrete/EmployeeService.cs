@@ -250,7 +250,7 @@ namespace SmartEmployment.Services.Concrete
             }
 		}
 
-		public List<Schedule> GetAllSchedulesForUser(string username)
+		public IEnumerable<Schedule> GetAllSchedulesForUser(string username)
 		{
 			var user = _userRepository.GetAll().FirstOrDefault(u => u.UserName == username);
 			if (user == null)
@@ -272,11 +272,11 @@ namespace SmartEmployment.Services.Concrete
 
 			if (currentRoles != null && currentRoles.Count() > 0 && currentRoles.Any(r => r.Name == "Manager"))
 			{
-                var allSchedules = _scheduleRepository.GetAll();
-				var employees = _employeeRepository.GetAll().Where(e => e.CompanyId == user.CompanyId);
-                var schedules = allSchedules.Where(s => employees.Any(e => e.Id == s.EmployeeId));
+                IEnumerable<Schedule> allSchedules = _scheduleRepository.GetAll();
+				List<Employee> employees = _employeeRepository.GetAll().Where(e => e.CompanyId == user.CompanyId).ToList();
+				IEnumerable<Schedule> schedules = allSchedules.Where(s => employees.Any(e => e.Id == s.EmployeeId));
 
-                return schedules.ToList(); 
+                return schedules; 
 			}
 			else
 			{
