@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SmartEmployment.DataAccess.Model;
 using SmartEmployment.Services.Abstract;
 using SmartEmployment.Services.Concrete;
 using SmartEmployment.Services.Model;
@@ -77,14 +78,16 @@ namespace SmartEmployment.API.Controllers
 
 		// PUT api/<EmployeesController>/5
 		[HttpPut("{id}")]
-		public void Put(int id, [FromBody] string value)
+		public void Put(int id, [FromBody] Schedule schedule)
 		{
+			_employeeService.UpdateSchedule(schedule);
 		}
 
 		// DELETE api/<EmployeesController>/5
 		[HttpDelete("{id}")]
 		public void Delete(int id)
 		{
+			_employeeService.DeleteSchedule(id);
 		}
 	}
 }

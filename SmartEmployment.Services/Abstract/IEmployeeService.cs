@@ -13,6 +13,8 @@ namespace SmartEmployment.Services.Abstract
         List<EmployeeServiceModel> GetAllEmployees();
 		List<EmployeeServiceModel> GetAllEmployeesForUser(int userId);
 		List<EmployeeServiceModel> GetAllEmployeesForUser(string username);
+        void DeleteSchedule(int Id);
+        void UpdateSchedule(Schedule schedule);
         IEnumerable<Schedule> GetAllSchedulesForUser(string username);
 		List<EmployeeServiceModel> GetAllEmployeesForManager(string managerCode); 
         List<EmployeeServiceModel> GetAllEmployeesForCompany(int companyId);

@@ -284,6 +284,17 @@ namespace SmartEmployment.Services.Concrete
 			}
 		}
 
+        void DeleteSchedule(int Id)
+        {
+            var schedule = _scheduleRepository.GetSingle(Id);
+            _scheduleRepository.Delete(schedule);
+        }
+
+		void UpdateSchedule(Schedule schedule)
+        { 
+            _scheduleRepository.Update(schedule);
+        }
+
 		public List<EmployeeServiceModel> GetAllEmployeesForCompany(int companyId)
         {
 			throw new NotImplementedException();
