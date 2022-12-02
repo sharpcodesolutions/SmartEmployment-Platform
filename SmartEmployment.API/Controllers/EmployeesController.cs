@@ -41,6 +41,25 @@ namespace SmartEmployment.API.Controllers
 			}
 		}
 
+		// GET: api/<EmployeesController>
+		[HttpGet("schedules/{username}")]
+		public IActionResult GetSchedules(string username)
+		{
+			try
+			{
+				var schedules = _employeeService.GetAllSchedulesForUser(username);
+				return Ok(schedules);
+			}
+			catch (UnauthorizedAccessException e)
+			{
+				return StatusCode(StatusCodes.Status403Forbidden);
+			}
+			catch (SecurityException e)
+			{
+				return StatusCode(StatusCodes.Status401Unauthorized);
+			}
+		}
+
 		/*
 		// GET api/<EmployeesController>/5
 		[HttpGet("{id}")]
