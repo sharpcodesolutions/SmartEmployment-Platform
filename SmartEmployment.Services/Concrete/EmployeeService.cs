@@ -25,10 +25,11 @@ namespace SmartEmployment.Services.Concrete
         private IEntityBaseRepository<Relationship> _relationshipRepository; 
         private IEntityBaseRepository<UserRole> _userRoleRepository;
         private IEntityBaseRepository<Role> _roleRepository;
+        private IEntityBaseRepository<Schedule> _scheduleRepository;
 		public EmployeeService(IEntityBaseRepository<Employee> employeeRepository, IEntityBaseRepository<Person> personRepository,
             IEntityBaseRepository<Company> companyRepository, IEntityBaseRepository<User> userRepository, 
             IEntityBaseRepository<Relationship> relationshipRepository, IEntityBaseRepository<UserRole> userRoleRepository, 
-            IEntityBaseRepository<Role> roleRepository)
+            IEntityBaseRepository<Role> roleRepository, IEntityBaseRepository<Schedule> scheduleRepository)
 		{
 			_employeeRepository = employeeRepository;
             _personRepository = personRepository;
@@ -37,6 +38,7 @@ namespace SmartEmployment.Services.Concrete
             _relationshipRepository = relationshipRepository;
             _userRoleRepository = userRoleRepository;
             _roleRepository = roleRepository;
+            _scheduleRepository = scheduleRepository;
 		}
 		public void AssignEmployeeToManager(string employeeCode, string managerCode)
         {
@@ -246,6 +248,40 @@ namespace SmartEmployment.Services.Concrete
             {
                 throw new UnauthorizedAccessException(); 
             }
+		}
+
+		public List<Schedule> GetAllSchedulesForUser(string username)
+		{
+			var user = _userRepository.GetAll().FirstOrDefault(u => u.UserName == username);
+			if (user == null)
+			{
+				throw new SecurityException();
+			}
+			var userRoles = _userRoleRepository.GetAll().Where(ur => ur.UserId == user.Id);
+			var roles = _roleRepository.GetAll();
+			var currentRoles = new List<Role>();
+
+			if (userRoles != null && userRoles.Count() > 0)
+			{
+				currentRoles = roles.Where(r => userRoles.Any(ur => ur.RoleId == r.Id)).ToList();
+			}
+			else
+			{
+				throw new UnauthorizedAccessException();
+			}
+
+			if (currentRoles != null && currentRoles.Count() > 0 && currentRoles.Any(r => r.Name == "Manager"))
+			{
+                var allSchedules = _scheduleRepository.GetAll();
+				var employees = _employeeRepository.GetAll().Where(e => e.CompanyId == user.CompanyId);
+                var schedules = allSchedules.Where(s => employees.Any(e => e.Id == s.EmployeeId));
+
+                return schedules.ToList(); 
+			}
+			else
+			{
+				throw new UnauthorizedAccessException();
+			}
 		}
 
 		public List<EmployeeServiceModel> GetAllEmployeesForCompany(int companyId)
