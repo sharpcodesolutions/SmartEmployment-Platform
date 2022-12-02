@@ -23,6 +23,7 @@ namespace SmartEmployment.Test.SmartEmployment.Services.Test
 		Mock<IEntityBaseRepository<Relationship>> relationshipRepositoryMock = new Mock<IEntityBaseRepository<Relationship>>();
 		Mock<IEntityBaseRepository<UserRole>> userRoleRepositoryMock = new Mock<IEntityBaseRepository<UserRole>>();
 		Mock<IEntityBaseRepository<Role>> roleRepositoryMock = new Mock<IEntityBaseRepository<Role>>();
+		Mock<IEntityBaseRepository<Schedule>> scheduleRepositoryMock = new Mock<IEntityBaseRepository<Schedule>>();
 		
 		public EmployeeServiceTest()
 		{
@@ -167,7 +168,7 @@ namespace SmartEmployment.Test.SmartEmployment.Services.Test
 		{
 			// Arrange
 			EmployeeService employeeService = new EmployeeService(employeeRepositoryMock.Object, personRepositoryMock.Object, companyRepositoryMock.Object,
-				userRepositoryMock.Object, relationshipRepositoryMock.Object, userRoleRepositoryMock.Object, roleRepositoryMock.Object); 
+				userRepositoryMock.Object, relationshipRepositoryMock.Object, userRoleRepositoryMock.Object, roleRepositoryMock.Object, scheduleRepositoryMock.Object); 
 			
 			// Act
 			List<EmployeeServiceModel> employees = employeeService.GetAllEmployeesForUser("John");
@@ -181,7 +182,7 @@ namespace SmartEmployment.Test.SmartEmployment.Services.Test
 		{
 			// Arrange
 			EmployeeService employeeService = new EmployeeService(employeeRepositoryMock.Object, personRepositoryMock.Object, companyRepositoryMock.Object,
-				userRepositoryMock.Object, relationshipRepositoryMock.Object, userRoleRepositoryMock.Object, roleRepositoryMock.Object);
+				userRepositoryMock.Object, relationshipRepositoryMock.Object, userRoleRepositoryMock.Object, roleRepositoryMock.Object, scheduleRepositoryMock.Object);
 
 			// Act
 			List<EmployeeServiceModel> employees = employeeService.GetAllEmployeesForUser("John");
@@ -198,7 +199,7 @@ namespace SmartEmployment.Test.SmartEmployment.Services.Test
 		{
 			// Arrange
 			EmployeeService employeeService = new EmployeeService(employeeRepositoryMock.Object, personRepositoryMock.Object, companyRepositoryMock.Object,
-				userRepositoryMock.Object, relationshipRepositoryMock.Object, userRoleRepositoryMock.Object, roleRepositoryMock.Object);
+				userRepositoryMock.Object, relationshipRepositoryMock.Object, userRoleRepositoryMock.Object, roleRepositoryMock.Object, scheduleRepositoryMock.Object);
 
 			// Act 
 			// Assert
@@ -210,7 +211,7 @@ namespace SmartEmployment.Test.SmartEmployment.Services.Test
 		{
 			// Arrange
 			EmployeeService employeeService = new EmployeeService(employeeRepositoryMock.Object, personRepositoryMock.Object, companyRepositoryMock.Object,
-				userRepositoryMock.Object, relationshipRepositoryMock.Object, userRoleRepositoryMock.Object, roleRepositoryMock.Object);
+				userRepositoryMock.Object, relationshipRepositoryMock.Object, userRoleRepositoryMock.Object, roleRepositoryMock.Object, scheduleRepositoryMock.Object);
 
 			// Act 
 			// Assert
