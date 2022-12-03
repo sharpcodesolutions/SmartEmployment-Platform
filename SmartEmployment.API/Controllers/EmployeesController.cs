@@ -77,10 +77,10 @@ namespace SmartEmployment.API.Controllers
 		}
 
 		// PUT api/<EmployeesController>/5
-		[HttpPut("Schedules/{id}")]
-		public void Put(int id, [FromBody] Schedule schedule)
+		[HttpPut("Schedules/{id}/{startTime}/{endTime}")]
+		public void Put(int id, string startTime, string endTime, [FromBody] ScheduleServiceModel schedule)
 		{
-			_employeeService.UpdateSchedule(schedule);
+			_employeeService.UpdateSchedule(schedule, startTime, endTime);
 		}
 
 		// DELETE api/<EmployeesController>/5

@@ -13,6 +13,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
+using System.Globalization;
 
 namespace SmartEmployment.Services.Concrete
 {
@@ -306,9 +308,31 @@ namespace SmartEmployment.Services.Concrete
 			_scheduleRepository.Delete(schedule);
 		}
 
-        void IEmployeeService.UpdateSchedule(Schedule schedule)
-        {
-			_scheduleRepository.Update(schedule);
+        void IEmployeeService.UpdateSchedule(ScheduleServiceModel schedule, string startTime, string endTime)
+        { 
+            if(startTime.Length == 7)
+            {
+                startTime = "0" + startTime; 
+            }
+			if (endTime.Length == 7)
+			{
+				endTime = "0" + endTime;
+			}
+			string _startTime = "2005-05-05 " + startTime;
+			string _endTime = "2005-05-05 " + endTime;
+            DateTime dt = DateTime.Now;
+			Schedule newSchedule = _scheduleRepository.GetSingle(schedule.Id);
+			// newSchedule.Id = schedule.Id;
+            newSchedule.StartTime = DateTime.ParseExact(_startTime, "yyyy-MM-dd hh:mm tt", null); 
+            newSchedule.EndTime = DateTime.ParseExact(_endTime, "yyyy-MM-dd hh:mm tt", null);
+			// newSchedule.Date = schedule.Date;
+            newSchedule.Comments = schedule.Comments; 
+            newSchedule.EmployeeId = schedule.EmployeeId;
+            // newSchedule.DayIndex = schedule.DayIndex;
+            newSchedule.Hours = schedule.Hours;
+            newSchedule.TaskId = schedule.TaskId;
+            // newSchedule.Deleted = false; 
+			_scheduleRepository.Update(newSchedule);
 		}
     }
 }
