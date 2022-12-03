@@ -43,12 +43,12 @@ namespace SmartEmployment.API.Controllers
 		}
 
 		// GET: api/<EmployeesController>
-		[HttpGet("schedules/{username}")]
-		public IActionResult GetSchedules(string username)
+		[HttpGet("schedules/{username}/{startDate}/{endDate}")]
+		public IActionResult GetSchedules(string username, string startDate, string endDate)
 		{
 			try
 			{
-				var schedules = _employeeService.GetAllSchedulesForUser(username);
+				var schedules = _employeeService.GetAllSchedulesForUser(username, startDate, endDate);
 				return Ok(schedules);
 			}
 			catch (UnauthorizedAccessException e)
@@ -77,14 +77,14 @@ namespace SmartEmployment.API.Controllers
 		}
 
 		// PUT api/<EmployeesController>/5
-		[HttpPut("{id}")]
+		[HttpPut("Schedules/{id}")]
 		public void Put(int id, [FromBody] Schedule schedule)
 		{
 			_employeeService.UpdateSchedule(schedule);
 		}
 
 		// DELETE api/<EmployeesController>/5
-		[HttpDelete("{id}")]
+		[HttpDelete("Schedules/{id}")]
 		public void Delete(int id)
 		{
 			_employeeService.DeleteSchedule(id);

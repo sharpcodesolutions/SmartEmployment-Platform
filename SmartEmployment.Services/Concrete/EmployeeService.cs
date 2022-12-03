@@ -250,8 +250,13 @@ namespace SmartEmployment.Services.Concrete
             }
 		}
 
-		public IEnumerable<Schedule> GetAllSchedulesForUser(string username)
+		public IEnumerable<Schedule> GetAllSchedulesForUser(string username, string startDate, string endDate)
 		{
+            var dateS = startDate.Split("%2F");
+            var _startDate = new DateTime(Int32.Parse(dateS[2]), Int32.Parse(dateS[1]), Int32.Parse(dateS[0]));
+
+			var dateE = endDate.Split("%2F");
+			var _endDate = new DateTime(Int32.Parse(dateE[2]), Int32.Parse(dateE[1]), Int32.Parse(dateE[0]));
 			var user = _userRepository.GetAll().FirstOrDefault(u => u.UserName == username);
 			if (user == null)
 			{
@@ -275,6 +280,7 @@ namespace SmartEmployment.Services.Concrete
                 IEnumerable<Schedule> allSchedules = _scheduleRepository.GetAll();
 				List<Employee> employees = _employeeRepository.GetAll().Where(e => e.CompanyId == user.CompanyId).ToList();
 				IEnumerable<Schedule> schedules = allSchedules.Where(s => employees.Any(e => e.Id == s.EmployeeId));
+                schedules = schedules.Where(s => s.Date.Date >= _startDate.Date && s.Date.Date <= _endDate.Date);
 
                 return schedules; 
 			}
@@ -283,17 +289,6 @@ namespace SmartEmployment.Services.Concrete
 				throw new UnauthorizedAccessException();
 			}
 		}
-
-        void DeleteSchedule(int Id)
-        {
-            var schedule = _scheduleRepository.GetSingle(Id);
-            _scheduleRepository.Delete(schedule);
-        }
-
-		void UpdateSchedule(Schedule schedule)
-        { 
-            _scheduleRepository.Update(schedule);
-        }
 
 		public List<EmployeeServiceModel> GetAllEmployeesForCompany(int companyId)
         {
@@ -304,5 +299,16 @@ namespace SmartEmployment.Services.Concrete
         {
             throw new NotImplementedException();
         }
+
+        void IEmployeeService.DeleteSchedule(int Id)
+        {
+			var schedule = _scheduleRepository.GetSingle(Id);
+			_scheduleRepository.Delete(schedule);
+		}
+
+        void IEmployeeService.UpdateSchedule(Schedule schedule)
+        {
+			_scheduleRepository.Update(schedule);
+		}
     }
 }

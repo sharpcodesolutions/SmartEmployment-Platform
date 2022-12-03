@@ -9,6 +9,7 @@ namespace SmartEmployment.DataAccess.Model
 	public class Schedule : IEntityBase
 	{
 		public int Id { get; set; }
+		public int DayIndex { get; set; }
 		public DateTime Date { get; set; }
 		public DateTime? StartTime { get; set; }
 		public DateTime? EndTime { get; set; }

@@ -15,7 +15,7 @@ namespace SmartEmployment.Services.Abstract
 		List<EmployeeServiceModel> GetAllEmployeesForUser(string username);
         void DeleteSchedule(int Id);
         void UpdateSchedule(Schedule schedule);
-        IEnumerable<Schedule> GetAllSchedulesForUser(string username);
+        IEnumerable<Schedule> GetAllSchedulesForUser(string username, string startDate, string endDate);
 		List<EmployeeServiceModel> GetAllEmployeesForManager(string managerCode); 
         List<EmployeeServiceModel> GetAllEmployeesForCompany(int companyId);
         public void CreateEmployee(EmployeeServiceModel employee, User user);
