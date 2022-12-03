@@ -71,9 +71,10 @@ namespace SmartEmployment.API.Controllers
 		*/
 
 		// POST api/<EmployeesController>
-		[HttpPost]
-		public void Post([FromBody] string value)
+		[HttpPost("Schedules")]
+		public void Post([FromBody] ScheduleServiceModel schedule)
 		{
+			_employeeService.AddSchedule(schedule);
 		}
 
 		// PUT api/<EmployeesController>/5

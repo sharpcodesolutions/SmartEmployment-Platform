@@ -282,7 +282,7 @@ namespace SmartEmployment.Services.Concrete
                 IEnumerable<Schedule> allSchedules = _scheduleRepository.GetAll();
 				List<Employee> employees = _employeeRepository.GetAll().Where(e => e.CompanyId == user.CompanyId).ToList();
 				IEnumerable<Schedule> schedules = allSchedules.Where(s => employees.Any(e => e.Id == s.EmployeeId));
-                schedules = schedules.Where(s => s.Date.Date >= _startDate.Date && s.Date.Date <= _endDate.Date);
+                schedules = schedules.Where(s => s.Date.Date >= _startDate.Date.AddDays(-1) && s.Date.Date <= _endDate.Date);
 
                 return schedules; 
 			}
@@ -320,7 +320,6 @@ namespace SmartEmployment.Services.Concrete
 			}
 			string _startTime = "2005-05-05 " + startTime;
 			string _endTime = "2005-05-05 " + endTime;
-            DateTime dt = DateTime.Now;
 			Schedule newSchedule = _scheduleRepository.GetSingle(schedule.Id);
 			// newSchedule.Id = schedule.Id;
             newSchedule.StartTime = DateTime.ParseExact(_startTime, "yyyy-MM-dd hh:mm tt", null); 
@@ -333,6 +332,22 @@ namespace SmartEmployment.Services.Concrete
             newSchedule.TaskId = schedule.TaskId;
             // newSchedule.Deleted = false; 
 			_scheduleRepository.Update(newSchedule);
+		}
+
+        void IEmployeeService.AddSchedule(ScheduleServiceModel schedule)
+        {
+			Schedule newSchedule = new Schedule();
+			newSchedule.Id = schedule.Id;
+			newSchedule.StartTime = schedule.StartTime;
+			newSchedule.EndTime = schedule.EndTime;
+			newSchedule.Date = schedule.Date;
+			newSchedule.Comments = schedule.Comments;
+			newSchedule.EmployeeId = schedule.EmployeeId;
+			newSchedule.DayIndex = schedule.DayIndex;
+			newSchedule.Hours = schedule.Hours;
+			newSchedule.TaskId = schedule.TaskId;
+			newSchedule.Deleted = false;
+			_scheduleRepository.Add(newSchedule);
 		}
     }
 }
