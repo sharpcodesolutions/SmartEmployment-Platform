@@ -19,10 +19,12 @@ namespace SmartEmployment.Services.Abstract
         IEnumerable<Schedule> GetAllSchedulesForUser(string username, string startDate, string endDate);
 		List<EmployeeServiceModel> GetAllEmployeesForManager(string managerCode); 
         List<EmployeeServiceModel> GetAllEmployeesForCompany(int companyId);
-        public void CreateEmployee(EmployeeServiceModel employee, User user);
+        public void CreateEmployee(EmployeeServiceModel employee, string username);
 		public void CreateEmployees(List<EmployeeServiceModel> employee);
 		public EmployeeServiceModel CreateEmployeeForManager(string managerCode, EmployeeServiceModel employee);
         public EmployeeServiceModel CreateEmployeeForCompany(string companyCode, EmployeeServiceModel employee);
-        public void AssignEmployeeToManager(string employeeCode, string managerCode); 
+		void DeleteEmployee(int Id);
+		void UpdateEmployee(EmployeeServiceModel employeeSM);
+		public void AssignEmployeeToManager(string employeeCode, string managerCode); 
     }
 }

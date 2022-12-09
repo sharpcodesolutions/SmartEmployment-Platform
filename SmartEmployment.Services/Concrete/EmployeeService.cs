@@ -47,9 +47,52 @@ namespace SmartEmployment.Services.Concrete
             throw new NotImplementedException();
         }
 
-        public void CreateEmployee(EmployeeServiceModel employee, User user)
-        {
-			throw new NotImplementedException();
+		public void CreateEmployee(EmployeeServiceModel employeeSM, string username)
+		{
+			var user = _userRepository.GetAll().FirstOrDefault(u => u.UserName == username);
+			if (user == null)
+			{
+				throw new SecurityException();
+			}
+			var userRoles = _userRoleRepository.GetAll().Where(ur => ur.UserId == user.Id);
+			var roles = _roleRepository.GetAll();
+			var currentRoles = new List<Role>();
+
+			if (userRoles != null && userRoles.Count() > 0)
+			{
+				currentRoles = roles.Where(r => userRoles.Any(ur => ur.RoleId == r.Id)).ToList();
+			}
+			else
+			{
+				throw new UnauthorizedAccessException();
+			}
+
+			if (currentRoles != null && currentRoles.Count() > 0 && currentRoles.Any(r => r.Name == "Manager"))
+			{
+				Person person = new Person
+				{
+					FirstName = employeeSM.Firstname,
+					LastName = employeeSM.Lastname,
+					BirthDate = employeeSM.BirthDate,
+					Email = employeeSM.EmployeeEmail
+				};
+				var newPerson = _personRepository.Add(person);
+
+				Employee employee = new Employee();
+				employee.EmployeeCode = employeeSM.EmployeeCode;
+				employee.StartDate = employeeSM.StartDate;
+				employee.TerminationDate = employeeSM.TerminationDate;
+				// List<Person> people = _personRepository.GetAll().ToList(); 
+				// var newPerson = people.FirstOrDefault(p => p.Email == employeeSM.EmployeeEmail);
+				employee.PersonId = newPerson.Id;
+				// };
+				employee.CompanyId = user.CompanyId.GetValueOrDefault();
+				_employeeRepository.Add(employee);
+			}
+			else
+			{
+				throw new UnauthorizedAccessException();
+			}
 		}
 
 		public void CreateEmployees(List<EmployeeServiceModel> employees)
@@ -198,51 +241,23 @@ namespace SmartEmployment.Services.Concrete
             {
 
                 List<EmployeeServiceModel> employeeSMs = new List<EmployeeServiceModel>();
-                if (user == null || user.EmployeeId == null)
+                var employees = _employeeRepository.GetAll().Where(e => e.CompanyId == user.CompanyId);
+                foreach (var employee in employees)
                 {
-                    var employees = _employeeRepository.GetAll().Where(e => e.CompanyId == user.CompanyId); 
-                    foreach (var employee in employees)
-                    {
-                        EmployeeServiceModel employeeSM = new EmployeeServiceModel();
-                        employeeSM.Id = employee.Id;
-                        employeeSM.EmployeeCode = employee.EmployeeCode;
-                        var companies = _companyRepository.GetAll();
-                        employeeSM.CompanyCode = companies.FirstOrDefault(c => c.Id == employee.CompanyId).CompanyCode;
-                        var people = _personRepository.GetAll();
-                        var person = people.FirstOrDefault(p => p.Id == employee.PersonId);
-                        employeeSM.Firstname = person.FirstName;
-                        employeeSM.Lastname = person.LastName;
-                        employeeSM.Birthdate = person.BirthDate;
-                        employeeSM.StartDate = employee.StartDate;
-                        employeeSM.TerminationDate = employee.TerminationDate;
-                        employeeSMs.Add(employeeSM);
-                    }
-                }
-                else
-                {
-                    var employees1 = _employeeRepository.GetAll();
-                    var managerCode = _employeeRepository.GetSingle(user.EmployeeId.Value).EmployeeCode;
-                    var relationships = _relationshipRepository.GetAll();
-                    var jjj = relationships.Where(r => r.ManagerCode == managerCode).ToList();
-                    var employeeCodes = jjj.Where(r => r.ManagerCode == managerCode).ToList();
-                    var jj = employeeCodes.Select(r => r.EmployeeCode).ToList();
-                    var employees = employees1.Where(e => jj.Contains(e.EmployeeCode)).ToList();
-                    foreach (var employee in employees)
-                    {
-                        EmployeeServiceModel employeeSM = new EmployeeServiceModel();
-                        employeeSM.Id = employee.Id;
-                        employeeSM.EmployeeCode = employee.EmployeeCode;
-                        var companies = _companyRepository.GetAll();
-                        employeeSM.CompanyCode = companies.FirstOrDefault(c => c.Id == employee.CompanyId).CompanyCode;
-                        var people = _personRepository.GetAll();
-                        var person = people.FirstOrDefault(p => p.Id == employee.PersonId);
-                        employeeSM.Firstname = person.FirstName;
-                        employeeSM.Lastname = person.LastName;
-                        employeeSM.Birthdate = person.BirthDate;
-                        employeeSM.StartDate = employee.StartDate;
-                        employeeSM.TerminationDate = employee.TerminationDate;
-                        employeeSMs.Add(employeeSM);
-                    }
+                    EmployeeServiceModel employeeSM = new EmployeeServiceModel();
+                    employeeSM.Id = employee.Id;
+                    employeeSM.EmployeeCode = employee.EmployeeCode;
+                    var companies = _companyRepository.GetAll();
+                    employeeSM.CompanyCode = companies.FirstOrDefault(c => c.Id == employee.CompanyId).CompanyCode;
+                    var people = _personRepository.GetAll();
+                    var person = people.FirstOrDefault(p => p.Id == employee.PersonId);
+                    employeeSM.Firstname = person.FirstName;
+                    employeeSM.Lastname = person.LastName;
+                    employeeSM.EmployeeEmail = person.Email;
+                    employeeSM.BirthDate = person.BirthDate;
+                    employeeSM.StartDate = employee.StartDate;
+                    employeeSM.TerminationDate = employee.TerminationDate;
+                    employeeSMs.Add(employeeSM);
                 }
                 return employeeSMs.ToList();
             }
@@ -349,5 +364,28 @@ namespace SmartEmployment.Services.Concrete
 			newSchedule.Deleted = false;
 			_scheduleRepository.Add(newSchedule);
 		}
-    }
+
+		void IEmployeeService.DeleteEmployee(int Id)
+		{
+			var employee = _employeeRepository.GetSingle(Id);
+			_employeeRepository.Delete(employee);
+		}
+
+		void IEmployeeService.UpdateEmployee(EmployeeServiceModel employeeSM)
+		{
+            var employee = _employeeRepository.GetSingle(employeeSM.Id);
+            var person = _personRepository.GetSingle(employee.PersonId);
+            person.FirstName = employeeSM.Firstname;
+            person.LastName = employeeSM.Lastname;
+            person.BirthDate = employeeSM.BirthDate;
+            person.Email = employeeSM.EmployeeEmail;
+
+            _personRepository.Update(person); 
+
+			employee.EmployeeCode = employeeSM.EmployeeCode;
+			employee.StartDate = employeeSM.StartDate;
+			employee.TerminationDate = employeeSM.TerminationDate;
+			_employeeRepository.Update(employee);
+		}
+	}
 }

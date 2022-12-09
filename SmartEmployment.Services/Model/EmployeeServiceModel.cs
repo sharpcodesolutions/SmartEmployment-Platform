@@ -20,7 +20,7 @@ namespace SmartEmployment.Services.Model
         [DisplayName("Email")]
         public string EmployeeEmail { get; set; }
 		[DataType(DataType.Date)]
-		public DateTime Birthdate { get; set; }
+		public DateTime BirthDate { get; set; }
 		[DataType(DataType.Date)]
 		[DisplayName("Start Date")]
         public DateTime StartDate { get; set; }

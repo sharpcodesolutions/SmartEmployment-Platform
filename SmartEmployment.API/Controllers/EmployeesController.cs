@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SmartEmployment.DataAccess.Model;
 using SmartEmployment.Services.Abstract;
 using SmartEmployment.Services.Concrete;
@@ -71,6 +72,13 @@ namespace SmartEmployment.API.Controllers
 		*/
 
 		// POST api/<EmployeesController>
+		[HttpPost("{username}")]
+		public void Post([FromBody] EmployeeServiceModel employeeSM, string username)
+		{
+			_employeeService.CreateEmployee(employeeSM, username);
+		}
+
+		// POST api/<EmployeesController>
 		[HttpPost("Schedules")]
 		public void Post([FromBody] ScheduleServiceModel schedule)
 		{
@@ -90,5 +98,20 @@ namespace SmartEmployment.API.Controllers
 		{
 			_employeeService.DeleteSchedule(id);
 		}
+
+
+		// PUT api/<EmployeesController>/5
+		[HttpPut]
+		public void Put([FromBody] EmployeeServiceModel employeeSM)
+		{
+			_employeeService.UpdateEmployee(employeeSM);
+		}
+
+		// DELETE api/<EmployeesController>/5
+		[HttpDelete("{id}")]
+		public void DeleteEmployee(int id)
+		{
+			_employeeService.DeleteEmployee(id);
+		}		
 	}
 }
