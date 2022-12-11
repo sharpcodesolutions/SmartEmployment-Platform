@@ -13,8 +13,8 @@ namespace SmartEmployment.DataAccess.Model
 		public DateTime Date { get; set; }
 		public DateTime? StartTime { get; set; }
 		public DateTime? EndTime { get; set; }
-		public decimal Hours { get; set; }
-		public string Comments { get; set; }
+		public decimal? Hours { get; set; }
+		public string? Comments { get; set; }
 		public bool Deleted { get; set; }
 		public byte[] Version { get; set; }
 		public int EmployeeId { get; set; }
