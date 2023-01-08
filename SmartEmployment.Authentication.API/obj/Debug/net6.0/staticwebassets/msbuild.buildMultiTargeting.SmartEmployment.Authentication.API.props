@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SmartEmployment.Authentication.API.props" />
+</Project>

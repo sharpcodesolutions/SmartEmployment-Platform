@@ -66,7 +66,7 @@ namespace SmartEmployment.MVC.Controllers
                             Firstname = reader.GetValue(2).ToString(),
                             Lastname = reader.GetValue(3).ToString(),
                             EmployeeEmail = reader.GetValue(4).ToString(),
-                            Birthdate = Convert.ToDateTime(reader.GetValue(5).ToString()),
+                            // Birthdate = Convert.ToDateTime(reader.GetValue(5).ToString()),
                             StartDate = Convert.ToDateTime(reader.GetValue(6).ToString()),
                             TerminationDate = Convert.ToDateTime(reader.GetValue(7).ToString())
                         });
