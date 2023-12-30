@@ -5,16 +5,20 @@ C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\SmartEmployment.A
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\SmartEmployment.API.runtimeconfig.json
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\SmartEmployment.API.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\SmartEmployment.API.pdb
+C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
@@ -26,12 +30,14 @@ C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.Identit
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\System.Linq.Async.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\System.Runtime.Caching.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\System.Security.Permissions.dll
@@ -51,9 +57,9 @@ C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\runtimes\win\lib\
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\SmartEmployment.DataAccess.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\SmartEmployment.Repository.dll
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\SmartEmployment.Services.dll
+C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\SmartEmployment.Repository.pdb
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\SmartEmployment.Services.pdb
 C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\SmartEmployment.DataAccess.pdb
-C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\SmartEmployment.Repository.pdb
 C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\SmartEmployment.API.csproj.AssemblyReference.cache
 C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\SmartEmployment.API.GeneratedMSBuildEditorConfig.editorconfig
 C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\SmartEmployment.API.AssemblyInfoInputs.cache
@@ -61,6 +67,11 @@ C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\SmartEmployment.A
 C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\SmartEmployment.API.csproj.CoreCompileInputs.cache
 C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\SmartEmployment.API.MvcApplicationPartsAssemblyInfo.cs
 C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\SmartEmployment.API.MvcApplicationPartsAssemblyInfo.cache
+C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\staticwebassets\msbuild.SmartEmployment.API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\staticwebassets\msbuild.build.SmartEmployment.API.props
+C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.SmartEmployment.API.props
+C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.SmartEmployment.API.props
+C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\staticwebassets.pack.json
 C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\staticwebassets.build.json
 C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\staticwebassets.development.json
 C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\scopedcss\bundle\SmartEmployment.API.styles.css
@@ -70,17 +81,3 @@ C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\refint\SmartEmplo
 C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\SmartEmployment.API.pdb
 C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\SmartEmployment.API.genruntimeconfig.cache
 C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\ref\SmartEmployment.API.dll
-C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
-C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
-C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\staticwebassets\msbuild.SmartEmployment.API.Microsoft.AspNetCore.StaticWebAssets.props
-C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\staticwebassets\msbuild.build.SmartEmployment.API.props
-C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.SmartEmployment.API.props
-C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.SmartEmployment.API.props
-C:\GitHub\SmartEmployment\SmartEmployment.API\obj\Debug\net6.0\staticwebassets.pack.json
-<<<<<<< HEAD
-=======
-C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-C:\GitHub\SmartEmployment\SmartEmployment.API\bin\Debug\net6.0\System.Linq.Async.dll
->>>>>>> feature/SE-1

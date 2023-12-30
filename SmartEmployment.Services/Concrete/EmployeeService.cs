@@ -15,6 +15,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using System.Globalization;
+using Microsoft.AspNetCore.Identity;
 
 namespace SmartEmployment.Services.Concrete
 {
@@ -73,7 +74,7 @@ namespace SmartEmployment.Services.Concrete
 				{
 					FirstName = employeeSM.Firstname,
 					LastName = employeeSM.Lastname,
-					BirthDate = employeeSM.BirthDate,
+					BirthDate = employeeSM.Birthdate,
 					Email = employeeSM.EmployeeEmail
 				};
 				var newPerson = _personRepository.Add(person);
@@ -137,8 +138,8 @@ namespace SmartEmployment.Services.Concrete
 
         public List<EmployeeServiceModel> GetAllEmployees()
         {
-			throw new NotImplementedException();
-            /*
+			//throw new NotImplementedException();
+            
 			List<EmployeeServiceModel> employeeSMs = new List<EmployeeServiceModel>(); 
             var employees = _employeeRepository.GetAll();
             foreach(var employee in employees)
@@ -158,14 +159,19 @@ namespace SmartEmployment.Services.Concrete
                 employeeSMs.Add(employeeSM);
 			}
             return employeeSMs.ToList();
-            */
+            
 		}
 
 		public List<EmployeeServiceModel> GetAllEmployeesForUser(int userId)
 		{
-			throw new NotImplementedException();
-            /*
-			var user = _userRepository.GetSingle(userId);
+            //throw new NotImplementedException();
+            string newPassword = "Timnewp77@";
+
+            var passwordHasher = new PasswordHasher<string>(); // You can pass in your user class as the type argument
+
+            string hashedNewPassword = passwordHasher.HashPassword(null, newPassword);
+
+            var user = _userRepository.GetSingle(userId);
 			List<EmployeeServiceModel> employeeSMs = new List<EmployeeServiceModel>();
 			if (user == null || user.EmployeeId == null)
             {                
@@ -214,7 +220,7 @@ namespace SmartEmployment.Services.Concrete
                 }
             }
 			return employeeSMs.ToList();
-            */
+            
 		}
 
 		public List<EmployeeServiceModel> GetAllEmployeesForUser(string username)
@@ -254,7 +260,7 @@ namespace SmartEmployment.Services.Concrete
                     employeeSM.Firstname = person.FirstName;
                     employeeSM.Lastname = person.LastName;
                     employeeSM.EmployeeEmail = person.Email;
-                    employeeSM.BirthDate = person.BirthDate;
+                    employeeSM.Birthdate = person.BirthDate;
                     employeeSM.StartDate = employee.StartDate;
                     employeeSM.TerminationDate = employee.TerminationDate;
                     employeeSMs.Add(employeeSM);
@@ -378,7 +384,7 @@ namespace SmartEmployment.Services.Concrete
             var person = _personRepository.GetSingle(employee.PersonId);
             person.FirstName = employeeSM.Firstname;
             person.LastName = employeeSM.Lastname;
-            person.BirthDate = employeeSM.BirthDate;
+            person.BirthDate = employeeSM.Birthdate;
             person.Email = employeeSM.EmployeeEmail;
 
             _personRepository.Update(person); 

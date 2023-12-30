@@ -80,7 +80,7 @@ namespace SmartEmployment.MVC.Controllers
 				userSV.EndDate = Convert.ToDateTime(collection["EndDate"]);
 			}
 
-            var role = int.Parse(collection["Role"]);
+            var role = int.Parse(collection["Roles"]);
             try
             {
                 _userService.CreateNewUser(userSV, role); 

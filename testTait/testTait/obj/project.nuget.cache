@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "tO3Tuwf1UBI6H338KJsmF1S/JOCx2gnw2Kxsvao5UMLbLqm6FPHUVnnUu/rlSIbHZLc99Q1940WXi3FgANU86A==",
+  "success": true,
+  "projectFilePath": "C:\\GitHub\\SmartEmployment\\testTait\\testTait\\testTait.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

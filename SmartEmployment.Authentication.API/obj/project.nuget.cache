@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PHhwA0NaLLhBVu1795UYnnpmJnIcCjotVrfapPczFj8qMkS+oenv72JIheuYQ2XBWHTjlt8kKQaivRyusgPIag==",
+  "dgSpecHash": "etV3KZSOg4ZiSpyQu35KYjRQ1B2unE4pN0vdbj/VrZtcMnwdNZjlATPvlok3gUVkh5JcADF3/dr+5B8+p4Njag==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\SmartEmployment\\SmartEmployment.Authentication.API\\SmartEmployment.Authentication.API.csproj",
   "expectedPackageFiles": [
@@ -124,18 +124,7 @@
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
     "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
-    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
-    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.11\\microsoft.netcore.app.host.win-x64.6.0.11.nupkg.sha512",
-    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512",
-    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
-    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512"
+    "C:\\Users\\WilliamAlkawaz\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\GitHub\\SmartEmployment\\SmartEmployment.Authentication.API\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

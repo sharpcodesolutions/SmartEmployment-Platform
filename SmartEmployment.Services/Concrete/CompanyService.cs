@@ -21,8 +21,7 @@ namespace SmartEmployment.Services.Concrete
 
 		public List<Company> GetAllCompanies()
 		{
-			throw new NotImplementedException();
-			// return (await _companyRepository.GetAll()).ToList();
+			return (_companyRepository.GetAll()).ToList();
 		}
 
 		public void CreateCompany(Company company)
