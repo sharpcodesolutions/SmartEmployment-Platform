@@ -74,7 +74,7 @@ namespace SmartEmployment.Services.Concrete
 				{
 					FirstName = employeeSM.Firstname,
 					LastName = employeeSM.Lastname,
-					BirthDate = employeeSM.Birthdate,
+					BirthDate = employeeSM.BirthDate,
 					Email = employeeSM.EmployeeEmail
 				};
 				var newPerson = _personRepository.Add(person);
@@ -153,7 +153,7 @@ namespace SmartEmployment.Services.Concrete
                 var person = people.FirstOrDefault(p => p.Id == employee.PersonId);
 				employeeSM.Firstname = person.FirstName;
 				employeeSM.Lastname = person.LastName;
-                employeeSM.Birthdate = person.BirthDate;
+                employeeSM.BirthDate = person.BirthDate;
                 employeeSM.StartDate = employee.StartDate;
                 employeeSM.TerminationDate = employee.TerminationDate; 
                 employeeSMs.Add(employeeSM);
@@ -187,7 +187,7 @@ namespace SmartEmployment.Services.Concrete
                     var person = people.FirstOrDefault(p => p.Id == employee.PersonId);
                     employeeSM.Firstname = person.FirstName;
                     employeeSM.Lastname = person.LastName;
-                    employeeSM.Birthdate = person.BirthDate;
+                    employeeSM.BirthDate = person.BirthDate;
                     employeeSM.StartDate = employee.StartDate;
                     employeeSM.TerminationDate = employee.TerminationDate;
                     employeeSMs.Add(employeeSM);
@@ -213,7 +213,7 @@ namespace SmartEmployment.Services.Concrete
                     var person = people.FirstOrDefault(p => p.Id == employee.PersonId);
                     employeeSM.Firstname = person.FirstName;
                     employeeSM.Lastname = person.LastName;
-                    employeeSM.Birthdate = person.BirthDate;
+                    employeeSM.BirthDate = person.BirthDate;
                     employeeSM.StartDate = employee.StartDate;
                     employeeSM.TerminationDate = employee.TerminationDate;
                     employeeSMs.Add(employeeSM);
@@ -260,7 +260,7 @@ namespace SmartEmployment.Services.Concrete
                     employeeSM.Firstname = person.FirstName;
                     employeeSM.Lastname = person.LastName;
                     employeeSM.EmployeeEmail = person.Email;
-                    employeeSM.Birthdate = person.BirthDate;
+                    employeeSM.BirthDate = person.BirthDate;
                     employeeSM.StartDate = employee.StartDate;
                     employeeSM.TerminationDate = employee.TerminationDate;
                     employeeSMs.Add(employeeSM);
@@ -384,7 +384,7 @@ namespace SmartEmployment.Services.Concrete
             var person = _personRepository.GetSingle(employee.PersonId);
             person.FirstName = employeeSM.Firstname;
             person.LastName = employeeSM.Lastname;
-            person.BirthDate = employeeSM.Birthdate;
+            person.BirthDate = employeeSM.BirthDate;
             person.Email = employeeSM.EmployeeEmail;
 
             _personRepository.Update(person); 
